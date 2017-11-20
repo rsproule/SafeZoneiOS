@@ -13,23 +13,29 @@ class SearchViewController: UIViewController {
     
     var searchCompleter = MKLocalSearchCompleter()
     var searchResults = [MKLocalSearchCompletion]()
-    
-    var searchResultsTableView: UITableView!
+    var coords = CLLocationCoordinate2D()
+
+    @IBOutlet weak var searchResultsTableView: UITableView!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        searchResultsTableView.dataSource = self
         
         searchCompleter.delegate = self
     }
+    
     
 }
 
 extension SearchViewController: UISearchBarDelegate {
     
+    
+    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         searchCompleter.queryFragment = searchText
+        print(searchText)
     }
 }
 
@@ -38,10 +44,12 @@ extension SearchViewController: MKLocalSearchCompleterDelegate {
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
         searchResults = completer.results
         searchResultsTableView.reloadData()
+        print("completer Updated")
     }
     
     func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {
         // handle error
+        print(error)
     }
 }
 
@@ -76,6 +84,10 @@ extension SearchViewController: UITableViewDelegate {
         search.start { (response, error) in
             let coordinate = response?.mapItems[0].placemark.coordinate
             print(String(describing: coordinate))
+            self.coords = coordinate!
+            self.performSegue(withIdentifier: "unwindToMap", sender: self)
+            
+            
         }
     }
 }
