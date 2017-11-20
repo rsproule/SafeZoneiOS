@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3EB101C5AE3DBE1B0F00F0C1 /* Pods_att2UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83383CD68FCE1B02F0C41DD8 /* Pods_att2UITests.framework */; };
+		684AF6601FC279CF000F3B1E /* LocationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684AF65F1FC279CF000F3B1E /* LocationPoint.swift */; };
 		684D0E741FBCB5FA00A55755 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684D0E721FBCB5FA00A55755 /* Main.storyboard */; };
 		684D0E761FBCB5FA00A55755 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 684D0E751FBCB5FA00A55755 /* Assets.xcassets */; };
 		684D0E791FBCB5FA00A55755 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684D0E771FBCB5FA00A55755 /* LaunchScreen.storyboard */; };
@@ -19,7 +20,6 @@
 		FA882E501FC26F5C00D609BC /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FA882E481FC26F5B00D609BC /* Base.lproj */; };
 		FA882E511FC26F5C00D609BC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA882E491FC26F5B00D609BC /* SearchViewController.swift */; };
 		FA882E531FC26F5C00D609BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA882E4B1FC26F5B00D609BC /* AppDelegate.swift */; };
-		FA882E541FC26F5C00D609BC /* LocationPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA882E4C1FC26F5C00D609BC /* LocationPoint.swift */; };
 		FA882E561FC26F5C00D609BC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA882E4E1FC26F5C00D609BC /* Info.plist */; };
 		FA882E571FC26F5C00D609BC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA882E4F1FC26F5C00D609BC /* ViewController.swift */; };
 		FA882E591FC2771F00D609BC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA882E581FC2771F00D609BC /* GoogleService-Info.plist */; };
@@ -47,6 +47,7 @@
 		2EC02B69AEA1238522229691 /* Pods_att2Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_att2Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		38C881E15F19B606CF18BDC1 /* Pods-att2Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-att2Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-att2Tests/Pods-att2Tests.release.xcconfig"; sourceTree = "<group>"; };
 		45780A4412F11CAFEDF8BB40 /* Pods-att2UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-att2UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-att2UITests/Pods-att2UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		684AF65F1FC279CF000F3B1E /* LocationPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPoint.swift; sourceTree = "<group>"; };
 		684D0E6B1FBCB5FA00A55755 /* att2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = att2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		684D0E731FBCB5FA00A55755 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		684D0E751FBCB5FA00A55755 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,12 +65,11 @@
 		98FD9146AEDA6080648D1379 /* Pods-att2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-att2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-att2Tests/Pods-att2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A012574C08B72B360AA50F9F /* Pods_att2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_att2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70B0A97272C6050B2EE3544 /* Pods-att2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-att2.release.xcconfig"; path = "Pods/Target Support Files/Pods-att2/Pods-att2.release.xcconfig"; sourceTree = "<group>"; };
-		FA882E481FC26F5B00D609BC /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Base.lproj; path = ../../438FinalProj/att2/Base.lproj; sourceTree = "<group>"; };
-		FA882E491FC26F5B00D609BC /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = ../../438FinalProj/att2/SearchViewController.swift; sourceTree = "<group>"; };
-		FA882E4B1FC26F5B00D609BC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../438FinalProj/att2/AppDelegate.swift; sourceTree = "<group>"; };
-		FA882E4C1FC26F5C00D609BC /* LocationPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationPoint.swift; path = ../../438FinalProj/att2/LocationPoint.swift; sourceTree = "<group>"; };
-		FA882E4E1FC26F5C00D609BC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../438FinalProj/att2/Info.plist; sourceTree = "<group>"; };
-		FA882E4F1FC26F5C00D609BC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../438FinalProj/att2/ViewController.swift; sourceTree = "<group>"; };
+		FA882E481FC26F5B00D609BC /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Base.lproj; path = /Users/labuser/Desktop/SafeZoneiOS/att2/Base.lproj; sourceTree = "<absolute>"; };
+		FA882E491FC26F5B00D609BC /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = /Users/labuser/Desktop/SafeZoneiOS/att2/SearchViewController.swift; sourceTree = "<absolute>"; };
+		FA882E4B1FC26F5B00D609BC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = /Users/labuser/Desktop/SafeZoneiOS/att2/AppDelegate.swift; sourceTree = "<absolute>"; };
+		FA882E4E1FC26F5C00D609BC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = /Users/labuser/Desktop/SafeZoneiOS/att2/Info.plist; sourceTree = "<absolute>"; };
+		FA882E4F1FC26F5C00D609BC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = /Users/labuser/Desktop/SafeZoneiOS/att2/ViewController.swift; sourceTree = "<absolute>"; };
 		FA882E581FC2771F00D609BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,7 +131,7 @@
 				FA882E481FC26F5B00D609BC /* Base.lproj */,
 				FA882E4E1FC26F5C00D609BC /* Info.plist */,
 				FA882E581FC2771F00D609BC /* GoogleService-Info.plist */,
-				FA882E4C1FC26F5C00D609BC /* LocationPoint.swift */,
+				684AF65F1FC279CF000F3B1E /* LocationPoint.swift */,
 				FA882E491FC26F5B00D609BC /* SearchViewController.swift */,
 				FA882E4F1FC26F5C00D609BC /* ViewController.swift */,
 				684D0E721FBCB5FA00A55755 /* Main.storyboard */,
@@ -478,7 +478,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA882E511FC26F5C00D609BC /* SearchViewController.swift in Sources */,
-				FA882E541FC26F5C00D609BC /* LocationPoint.swift in Sources */,
+				684AF6601FC279CF000F3B1E /* LocationPoint.swift in Sources */,
 				FA882E571FC26F5C00D609BC /* ViewController.swift in Sources */,
 				FA882E531FC26F5C00D609BC /* AppDelegate.swift in Sources */,
 			);
