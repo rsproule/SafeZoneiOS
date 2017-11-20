@@ -131,6 +131,34 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    /*
+        @desc determines whether users are outside the group range
+        @param1 dictionary of Users and their Location
+        @param2 the range determined by the group settings
+        @return tuple of the avg location point and a dictionary of the user and boolean for their status (false = outside range)
+    */
+    public func checkUserStatuses(user_locations : [String : CLLocationCoordinate2D], meters_range:Double)->(avg_location:CLLocation, user_statuses:[String : Bool]){
+        var total_lat = 0.0;
+        var total_long = 0.0;
+        for user in user_locations {
+            total_lat += Double(""+user.value.latitude.description)!
+            total_long += Double(""+user.value.longitude.description)!
+        }
+        let avg_lat = (total_lat)/Double(user_locations.count)
+        let avg_long = (total_long)/Double(user_locations.count)
+        let avg = CLLocation(latitude: CLLocationDegrees(avg_lat), longitude: CLLocationDegrees(avg_long))
+        var response:[String : Bool] = [:]
+        for user in user_locations{
+            if(avg.distance(from: CLLocation(latitude: user.value.latitude, longitude: user.value.longitude)) > meters_range){
+                response[user.key] = false
+            } else {
+                response[user.key] = true
+            }
+        }
+        
+        return (avg, response)
+    }
+    
     
 }
 

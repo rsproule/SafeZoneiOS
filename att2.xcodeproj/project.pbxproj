@@ -64,12 +64,12 @@
 		98FD9146AEDA6080648D1379 /* Pods-att2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-att2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-att2Tests/Pods-att2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A012574C08B72B360AA50F9F /* Pods_att2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_att2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70B0A97272C6050B2EE3544 /* Pods-att2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-att2.release.xcconfig"; path = "Pods/Target Support Files/Pods-att2/Pods-att2.release.xcconfig"; sourceTree = "<group>"; };
-		FA882E481FC26F5B00D609BC /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Base.lproj; path = ../../438FinalProj/att2/Base.lproj; sourceTree = "<group>"; };
-		FA882E491FC26F5B00D609BC /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SearchViewController.swift; path = ../../438FinalProj/att2/SearchViewController.swift; sourceTree = "<group>"; };
-		FA882E4B1FC26F5B00D609BC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../438FinalProj/att2/AppDelegate.swift; sourceTree = "<group>"; };
-		FA882E4C1FC26F5C00D609BC /* LocationPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocationPoint.swift; path = ../../438FinalProj/att2/LocationPoint.swift; sourceTree = "<group>"; };
-		FA882E4E1FC26F5C00D609BC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../../438FinalProj/att2/Info.plist; sourceTree = "<group>"; };
-		FA882E4F1FC26F5C00D609BC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../438FinalProj/att2/ViewController.swift; sourceTree = "<group>"; };
+		FA882E481FC26F5B00D609BC /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
+		FA882E491FC26F5B00D609BC /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		FA882E4B1FC26F5B00D609BC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FA882E4C1FC26F5C00D609BC /* LocationPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationPoint.swift; sourceTree = "<group>"; };
+		FA882E4E1FC26F5C00D609BC /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA882E4F1FC26F5C00D609BC /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FA882E581FC2771F00D609BC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
