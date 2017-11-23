@@ -674,7 +674,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 19A13D915AEC1D2B5CE0DD0B /* Pods-att2.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = SafeZoneAppIcon;
 				DEVELOPMENT_TEAM = CW67QXRY9P;
 				INFOPLIST_FILE = att2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -688,7 +688,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A70B0A97272C6050B2EE3544 /* Pods-att2.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = SafeZoneAppIcon;
 				DEVELOPMENT_TEAM = CW67QXRY9P;
 				INFOPLIST_FILE = att2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
