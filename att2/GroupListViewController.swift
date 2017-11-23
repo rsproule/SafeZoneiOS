@@ -13,7 +13,6 @@ import MapKit
 class GroupListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     
-    
     @IBOutlet weak var groupTableView: UITableView!
     
     var groupsArray: [Group] = [];
@@ -30,7 +29,11 @@ class GroupListViewController: UIViewController, UITableViewDelegate, UITableVie
         groupTableView.delegate = self;
         groupTableView.dataSource = self;
         
-        getGroupsFromDatabase(userID: "userID")
+        
+        
+        getGroupsFromDatabase(userID: CURRENT_USER_ID)
+        
+        
 
         // Do any additional setup after loading the view.
     }
@@ -63,16 +66,17 @@ class GroupListViewController: UIViewController, UITableViewDelegate, UITableVie
         
         ref = Database.database().reference()
         
-        let currentUser = "userID"
+        let currentUser = userID
         
         let usersGroupsRef = ref.child("users").child(currentUser).child("groups");
 
         
-        
+        // observes all the current user's groups
         usersGroupsRef.observe(.childAdded, with: {(snapshot)-> Void in
             
             let groupRef = ref.child("groups").child(snapshot.key);
             
+            // do a JOIN by group ID
             groupRef.observe(.value, with: {(snap) -> Void in
                 
                 if let grp = snap.value as? Dictionary<String, AnyObject>{
@@ -88,7 +92,7 @@ class GroupListViewController: UIViewController, UITableViewDelegate, UITableVie
                     
                     
                 }else{
-                    print("BAD DATA")
+                    print("BAD DATA") // should avoid crash but IDK
                 }
         
             })

@@ -28,6 +28,8 @@
 		FA8E9C7D1FC4D0AF0011ADD2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E9C7C1FC4D0AF0011ADD2 /* User.swift */; };
 		FA8E9C7F1FC4D0F80011ADD2 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E9C7E1FC4D0F80011ADD2 /* Event.swift */; };
 		FA8E9C811FC542390011ADD2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E9C801FC542390011ADD2 /* LoginViewController.swift */; };
+		FA90750C1FC638110079CFDA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90750B1FC638110079CFDA /* MainTabBarController.swift */; };
+		FA9075101FC63EE00079CFDA /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90750F1FC63EE00079CFDA /* RegistrationViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +83,8 @@
 		FA8E9C7C1FC4D0AF0011ADD2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA8E9C7E1FC4D0F80011ADD2 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		FA8E9C801FC542390011ADD2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FA90750B1FC638110079CFDA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = /Users/ryansproule/Documents/CSE438/SafeZoneiOS/att2/MainTabBarController.swift; sourceTree = "<absolute>"; };
+		FA90750F1FC63EE00079CFDA /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = /Users/ryansproule/Documents/CSE438/SafeZoneiOS/att2/RegistrationViewController.swift; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,7 +145,9 @@
 				FA882E481FC26F5B00D609BC /* Base.lproj */,
 				FA882E4E1FC26F5C00D609BC /* Info.plist */,
 				FA882E581FC2771F00D609BC /* GoogleService-Info.plist */,
+				FA90750F1FC63EE00079CFDA /* RegistrationViewController.swift */,
 				FA882E4C1FC26F5C00D609BC /* LocationPoint.swift */,
+				FA90750B1FC638110079CFDA /* MainTabBarController.swift */,
 				FA882E491FC26F5B00D609BC /* SearchViewController.swift */,
 				FA882E4F1FC26F5C00D609BC /* ViewController.swift */,
 				684D0E721FBCB5FA00A55755 /* Main.storyboard */,
@@ -271,7 +277,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0830;
+				LastUpgradeCheck = 0910;
 				ORGANIZATIONNAME = "Sasha CSE438";
 				TargetAttributes = {
 					684D0E6A1FBCB5FA00A55755 = {
@@ -494,6 +500,8 @@
 			files = (
 				FA8E9C811FC542390011ADD2 /* LoginViewController.swift in Sources */,
 				FA8E9C7F1FC4D0F80011ADD2 /* Event.swift in Sources */,
+				FA90750C1FC638110079CFDA /* MainTabBarController.swift in Sources */,
+				FA9075101FC63EE00079CFDA /* RegistrationViewController.swift in Sources */,
 				FA882E511FC26F5C00D609BC /* SearchViewController.swift in Sources */,
 				FA882E541FC26F5C00D609BC /* LocationPoint.swift in Sources */,
 				FA0323C41FC4CF440087DAF0 /* GroupListViewController.swift in Sources */,
@@ -565,7 +573,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -573,7 +583,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -616,7 +630,9 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
@@ -624,7 +640,11 @@
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -654,7 +674,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 19A13D915AEC1D2B5CE0DD0B /* Pods-att2.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = SafeZoneAppIcon;
 				DEVELOPMENT_TEAM = CW67QXRY9P;
 				INFOPLIST_FILE = att2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -668,7 +688,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A70B0A97272C6050B2EE3544 /* Pods-att2.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = SafeZoneAppIcon;
 				DEVELOPMENT_TEAM = CW67QXRY9P;
 				INFOPLIST_FILE = att2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
