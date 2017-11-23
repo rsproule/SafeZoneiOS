@@ -50,7 +50,10 @@ class RegistrationViewController: UIViewController {
                 let users = snap.value as! Dictionary<String, String>
                 if users[username] == nil {
                     // good to upload
-                    self.registerUser(name: name, username: username)
+                    let userIdR = self.registerUser(name: name, username: username);
+                    
+                    CURRENT_USER_ID = userIdR;
+                    self.performSegue(withIdentifier: "registrationSuccess", sender: self)
                 }else{
                     // this guy is already taken, report in error text somewhere
                     
@@ -59,7 +62,7 @@ class RegistrationViewController: UIViewController {
         }
     }
     
-    func registerUser(name : String, username: String){
+    func registerUser(name : String, username: String) -> String{
         let ref: DatabaseReference!
         
         ref = Database.database().reference();
@@ -77,7 +80,7 @@ class RegistrationViewController: UIViewController {
         
         loginRef.child(username).setValue(newKey);
         
-        
+        return newKey;
     }
     /*
     // MARK: - Navigation

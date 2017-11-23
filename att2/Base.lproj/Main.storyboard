@@ -435,6 +435,7 @@
                         <outlet property="nameTextField" destination="7Da-Ub-PaS" id="029-gL-Xnv"/>
                         <outlet property="usernameTextField" destination="Gbq-UG-ZRf" id="wNu-FZ-5nW"/>
                         <segue destination="wo6-pz-8Yo" kind="presentation" identifier="cancelRegistration" modalTransitionStyle="flipHorizontal" id="Vyh-8J-dia"/>
+                        <segue destination="SxH-ZR-xi2" kind="show" identifier="registrationSuccess" id="ib5-pH-pQk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BUH-ck-Rho" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -504,4 +505,7 @@
         <image name="SafeZoneWhite" width="4096" height="4096"/>
         <image name="locationimage" width="16" height="16"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="ib5-pH-pQk"/>
+    </inferredMetricsTieBreakers>
 </document>
