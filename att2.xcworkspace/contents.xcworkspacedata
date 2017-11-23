@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:/Users/ryansproule/Documents/CSE438/SafeZoneiOS/att2/RegistrationViewController.swift">
+   </FileRef>
+   <FileRef
+      location = "absolute:att2/MainTabBarController.swift">
+   </FileRef>
+   <FileRef
       location = "group:att2.xcodeproj">
    </FileRef>
    <FileRef

@@ -11,10 +11,14 @@ import CoreLocation
 import MapKit
 
 
+// GLOBAL USER DEFINED HERE CAN BE ACCESSED IN ANY VC
+var CURRENT_USER_ID: String = "";
+
+
 class ViewController: UIViewController,CLLocationManagerDelegate {
     
     let locationManager = CLLocationManager()
-
+    var currentUserId: String = "";
     
     @IBOutlet weak var map: MKMapView!
 
