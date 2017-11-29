@@ -35,7 +35,7 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         searchCompleter.queryFragment = searchText
-        print(searchText)
+        //print(searchText)
     }
 }
 
@@ -44,7 +44,7 @@ extension SearchViewController: MKLocalSearchCompleterDelegate {
     func completerDidUpdateResults(_ completer: MKLocalSearchCompleter) {
         searchResults = completer.results
         searchResultsTableView.reloadData()
-        print("completer Updated")
+        //print("completer Updated")
     }
     
     func completer(_ completer: MKLocalSearchCompleter, didFailWithError error: Error) {

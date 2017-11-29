@@ -16,6 +16,8 @@ class GroupListViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var groupTableView: UITableView!
     
     var groupsArray: [Group] = [];
+    var eventIdsArray: [[String]] = []
+    var memberIdsArray: [[String]] = []
     
     let cellReuseIdentifier = "tablecell"
 
@@ -24,7 +26,7 @@ class GroupListViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.groupTableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+       // self.groupTableView.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
 
         groupTableView.delegate = self;
         groupTableView.dataSource = self;
@@ -46,16 +48,26 @@ class GroupListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        let cell:UITableViewCell = self.groupTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
-        
+        var cell: UITableViewCell?
+       // let cell:UITableViewCell = self.groupTableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as UITableViewCell!
+        cell = tableView.dequeueReusableCell(withIdentifier: "groupCell")
+        if cell == nil {
+            cell = UITableViewCell(style: .subtitle, reuseIdentifier: "groupCell")
+        }
         // set the text from the data model
-        cell.textLabel?.text = self.groupsArray[indexPath.row].groupName
+        cell?.textLabel?.text = self.groupsArray[indexPath.row].groupName
+        //cell?.detailTextLabel?.text = self.groupsArray[indexPath.row].members
         
-        return cell;
+        return cell!;
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       // print("Selected " + groupsArray[indexPath.row].groupName);
+
+        self.performSegue(withIdentifier: "groupInfoSegue", sender: indexPath.row)
+
+    }
     
     
     //Firebase stuff
@@ -80,14 +92,18 @@ class GroupListViewController: UIViewController, UITableViewDelegate, UITableVie
             groupRef.observe(.value, with: {(snap) -> Void in
                 
                 if let grp = snap.value as? Dictionary<String, AnyObject>{
+                    
                     let name = grp["name"] as! String
-                    let members: [User] = self.parseMembers(membersDict: grp["members"]!);
-                    let events: [Event] = self.parseEvents(eventsDict: grp["events"]!);
+                    let memberIds: [String] = self.parseMembers(membersDict: grp["members"]!);
+                    let eventIds: [String] = self.parseEvents(eventsDict: grp["events"]!);
                     
+                    let group = Group(name: name, members: [], events: [])
                     
-                    let group = Group(name: name, members: members, events: events)
-                    
+                   
+                    self.memberIdsArray.append(memberIds);
+                    self.eventIdsArray.append(eventIds);
                     self.groupsArray.append(group);
+                   
                     self.groupTableView.insertRows(at: [IndexPath(row: self.groupsArray.count-1, section: 0)], with: UITableViewRowAnimation.automatic)
                     
                     
@@ -104,72 +120,54 @@ class GroupListViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     
-    func parseMembers(membersDict: AnyObject) -> [User] {
-        var users: [User] = [];
+    func parseMembers(membersDict: AnyObject) -> [String] {
+        var users: [String] = [];
         
         let m = membersDict as! Dictionary<String, Any>
-        for username in m.keys {
-            users.append(User(name: username));
+        for userId in m.keys {
+            users.append(userId);
+            
         }
+    
         
         return users;
         
     }
     
-    func parseEvents(eventsDict: AnyObject) -> [Event] {
-        var events: [Event] = [];
+    func parseEvents(eventsDict: AnyObject) -> [String] {
+        var eventIds: [String] = [];
         
         let e = eventsDict as! Dictionary<String, Any>
         
-        var ref: DatabaseReference!
+//        var ref: DatabaseReference!
+//
+//        ref = Database.database().reference()
         
-        ref = Database.database().reference()
-        
-        for k in e.keys {
-            let eventsRef = ref.child("events").child(k);
-            
-            eventsRef.observe(.value, with: {(snap) -> Void in
-                if let eventInfoDict = snap.value as? Dictionary<String, Any> {
-                    let eventName = eventInfoDict["name"] as! String
-                    let loc: LocationPoint = self.parseLocation(locationDict: eventInfoDict["location"]!)
-                    
-                    let date: Date = Date(timeIntervalSince1970: eventInfoDict["date"] as! Double)
-
-                    events.append(Event(location: loc, name: eventName, date: date))
-                    
-                }else{
-                    print("Casting ERROR")
-                }
-                
-            })
-            
+        for id in e.keys {
+            eventIds.append(id);
+         
         }
-       
-        return events;
+      // print(events)
+        return eventIds;
         
     }
     
-    func parseLocation(locationDict: Any) -> LocationPoint{
-        
-        let loc = locationDict as! Dictionary<String, Any>
-        
-        let latitude = loc["latitude"] as! Double
-        let longitude = loc["longitude"] as! Double
-        let name = loc["name"] as! String
-        let coord = CLLocationCoordinate2DMake(latitude, longitude)
-        
-        return LocationPoint(title: "Event Location", locationName: name, coordinate: coord)
-    }
+   
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier ==  "groupInfoSegue" {
+            let detailVC = segue.destination as! GroupInfoViewController
+            detailVC.eventIds = eventIdsArray[sender as! Int];
+            detailVC.memberIds = memberIdsArray[sender as! Int];
+        }
     }
-    */
+    
 
 }
 
