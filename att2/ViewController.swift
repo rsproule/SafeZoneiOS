@@ -152,7 +152,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
         let avg_lat = (total_lat)/Double(user_locations.count)
         let avg_long = (total_long)/Double(user_locations.count)
         let avg = CLLocation(latitude: CLLocationDegrees(avg_lat), longitude: CLLocationDegrees(avg_long))
-        var response:[String : Bool] = [:]
+        var response: [String : Bool] = [:]
         for user in user_locations{
             if(avg.distance(from: CLLocation(latitude: user.value.latitude, longitude: user.value.longitude)) > meters_range){
                 response[user.key] = false

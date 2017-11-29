@@ -40,9 +40,8 @@ class LoginViewController: UIViewController {
             ref = Database.database().reference()
             
             let loginRef = ref.child("logins");
-            
-            
-            loginRef.observe(.value, with: {(snap) -> Void in
+
+           loginRef.observe(.value, with: {(snap) -> Void in
                 
                 let users = snap.value as! Dictionary<String, String>
                 if users[username] == nil {
@@ -52,7 +51,9 @@ class LoginViewController: UIViewController {
                     CURRENT_USER_ID = users[username]!;
                     self.performSegue(withIdentifier: "login", sender: self)
                 }
-            })
+             })
+            
+            
             
         }
       
