@@ -112,19 +112,19 @@ class EventInfoViewController: UIViewController {
         for controller in self.navigationController!.viewControllers as Array {
             if(tabBarController?.selectedIndex == 1){
                 if controller.isKind(of: HomeViewController.self) {
-                    self.navigationController!.popToViewController(controller, animated: false)
+                    self.navigationController!.popToViewController(controller, animated: true)
                     break
                 }
             }
             
             
             if controller.isKind(of: GroupListViewController.self) {
-                self.navigationController!.popToViewController(controller, animated: false)
+                self.navigationController!.popToViewController(controller, animated: true)
                 break
             }
         }
         
-        
+        //should switch us to the current event tab
         tabBarController?.selectedIndex = 0
 
         
