@@ -8,6 +8,7 @@ target 'att2' do
   # Pods for att2
   pod 'Firebase/Core'
   pod 'Firebase/Database'
+  pod 'SwiftyJSON'
   #pod 'GoogleSignIn'
   
   target 'att2Tests' do

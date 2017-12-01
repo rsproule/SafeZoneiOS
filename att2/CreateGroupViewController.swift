@@ -8,25 +8,83 @@
 
 import UIKit
 import FirebaseDatabase
+import SwiftyJSON
 
 class CreateGroupViewController: UIViewController {
     
     @IBOutlet weak var groupNameTextField: UITextField!
     
+    @IBOutlet weak var usersAddedLabel: UILabel!
     @IBOutlet weak var searchResultsTableView: UITableView!
     
+    @IBAction func cancelButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func createGroupButton(_ sender: Any) {
         let newGroup = Group(name: groupNameTextField.text!, members: newGroupMembers, events: [])
         
-        // send new group to firebase for each member
+        if(newGroupMembers.count > 1 && groupNameTextField.text != ""){
+            // send new group to firebase for each member, then segue back to groups
+            var membersJSON: [String: Any] = [:]
+            
+            for user in newGroupMembers{
+                membersJSON[user.Id] = [
+                    "name" : user.name,
+                    "username" : user.username
+                ]
+            }
+            
+            
+           
+            let groupDICT: [String: Any] = [
+                "name" : newGroup.groupName,
+                "members" : membersJSON,
+                "events" : "Null"
+            ]
+           
+            
+           // let groupJSON = JSON(groupDICT)
+            
+            
+           
+            
+            var ref: DatabaseReference?
+            
+            ref = Database.database().reference()
+            
+            let groupRef = ref?.child("groups").childByAutoId()
+            
+            let memberRef = ref?.child("users")
+            
+            
+            
+            groupRef?.setValue(groupDICT);
+            print("group sent")
+            
+            for user in newGroupMembers {
+               memberRef?.child(user.Id)
+                .child("groups")
+                .child((groupRef?.key)!)
+                .setValue(true)
+            }
+            print("Users sent")
+            //segue createdGroup
+            self.performSegue(withIdentifier: "createdGroup", sender: self)
+
+            
+            
+            
+            
+            
+        }
+        
     }
     
     @IBOutlet weak var searchBar: UISearchBar!
-    let searchController = UISearchController(searchResultsController: nil)
 
     var searchResultsUsers: [User] = [];
     var newGroupMembers: [User] = [];
-    
+    var filteredResults: [User] = [];
  
     
 
@@ -37,12 +95,7 @@ class CreateGroupViewController: UIViewController {
         
         getAllUsers();
         
-        //searchCompleter.delegate = self;
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Users"
-        //navigationItem.searchController = searchController
-        definesPresentationContext = true
+        searchBar.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,6 +116,8 @@ class CreateGroupViewController: UIViewController {
                 let id = snap.key;
                 
                 self.searchResultsUsers.append(User(name: name, Id: id, username: username))
+                self.filteredResults.append(User(name: name, Id: id, username: username))
+
                 self.searchResultsTableView.reloadData()
             }
 
@@ -84,7 +139,7 @@ class CreateGroupViewController: UIViewController {
 
 extension CreateGroupViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return searchResultsUsers.count;
+        return filteredResults.count;
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -94,8 +149,8 @@ extension CreateGroupViewController: UITableViewDataSource {
         if cell == nil {
             cell = UITableViewCell(style: .subtitle, reuseIdentifier: "searchCell")
         }
-        cell?.textLabel?.text = searchResultsUsers[indexPath.row].name
-        cell?.detailTextLabel?.text = searchResultsUsers[indexPath.row].username
+        cell?.textLabel?.text = filteredResults[indexPath.row].name
+        cell?.detailTextLabel?.text = filteredResults[indexPath.row].username
         return cell!
     }
     
@@ -105,13 +160,57 @@ extension CreateGroupViewController: UITableViewDataSource {
 extension CreateGroupViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // on select add to list of users and then reset the search query
+        let newUser = filteredResults[indexPath.row]
+        searchResultsUsers.remove(at: indexPath.row)
+        filteredResults.remove(at: indexPath.row)
+        
+        newGroupMembers.append(newUser)
+        
+        usersAddedLabel.text = "";
+        var s: String = "";
+        for u in newGroupMembers {
+            s.append( u.name + ", ");
+        }
+        usersAddedLabel.text = s
+        
+        searchResultsTableView.reloadData()
+        
     }
+}
+
+extension CreateGroupViewController: UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        print(filteredResults.count)
+        
+        let query = searchText.lowercased()
+        if query.characters.count == 0 {
+            filteredResults = searchResultsUsers;
+        }else{
+            filteredResults = searchResultsUsers.filter({(user) in
+                
+                if(user.name.lowercased().contains(query)){
+                    return true;
+                }
+                
+                if(user.username.lowercased().contains(query)){
+                    return true;
+                }
+                
+                return false;
+            })
+            print(filteredResults.count)
+            
+            self.searchResultsTableView.reloadData()
+        }
+    }
+    
 }
 
 extension CreateGroupViewController: UISearchResultsUpdating {
     // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
         // TODO
+        
     }
 }
 

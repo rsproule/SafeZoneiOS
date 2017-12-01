@@ -137,17 +137,16 @@ class GroupListViewController: UIViewController, UITableViewDelegate, UITableVie
     func parseEvents(eventsDict: AnyObject) -> [String] {
         var eventIds: [String] = [];
         
-        let e = eventsDict as! Dictionary<String, Any>
-        
-//        var ref: DatabaseReference!
-//
-//        ref = Database.database().reference()
-        
-        for id in e.keys {
-            eventIds.append(id);
-         
+        if let e = eventsDict as? Dictionary<String, Any> {
+            for id in e.keys {
+                eventIds.append(id);
+            }
+        }else{
+            // there are no events
+            eventIds = [];
         }
-      // print(events)
+ 
+       
         return eventIds;
         
     }

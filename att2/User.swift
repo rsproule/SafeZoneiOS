@@ -13,6 +13,7 @@ class User: Equatable {
     var name: String;
     var username: String;
     var Id: String
+    var json: String
     
     static func ==(lhs: User, rhs: User) -> Bool {
         if(lhs.name != rhs.name){
@@ -26,6 +27,8 @@ class User: Equatable {
         self.name = name;
         self.Id = Id
         self.username = username
+        
+        self.json = "{\"id\": \(Id), \"name\": \(name), \"username\": \(username)}"
     }
     
     // more TODO
