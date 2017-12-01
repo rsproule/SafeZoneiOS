@@ -48,6 +48,7 @@ class Group: Hashable{
         self.members = members;
         
         self.hashValue = groupName.hashValue
+        
     }
     
     

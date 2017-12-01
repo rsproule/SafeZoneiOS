@@ -13,12 +13,12 @@
 		684D0E791FBCB5FA00A55755 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684D0E771FBCB5FA00A55755 /* LaunchScreen.storyboard */; };
 		684D0E841FBCB5FA00A55755 /* att2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D0E831FBCB5FA00A55755 /* att2Tests.swift */; };
 		684D0E8F1FBCB5FA00A55755 /* att2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D0E8E1FBCB5FA00A55755 /* att2UITests.swift */; };
-		684D0EA01FBCB73B00A55755 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684D0E9F1FBCB73B00A55755 /* MapKit.framework */; };
 		A66AF909259FD78B3E14FE42 /* Pods_att2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EC02B69AEA1238522229691 /* Pods_att2Tests.framework */; };
-		C47C5C83F30BCEACD86B0F28 /* Pods_att2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A012574C08B72B360AA50F9F /* Pods_att2.framework */; };
 		FA0323C41FC4CF440087DAF0 /* GroupListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0323C31FC4CF440087DAF0 /* GroupListViewController.swift */; };
 		FA22A9B01FCDFFFB00C7EE45 /* GroupInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22A9AF1FCDFFFB00C7EE45 /* GroupInfoViewController.swift */; };
 		FA22A9B21FCE662F00C7EE45 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22A9B11FCE662F00C7EE45 /* CreateGroupViewController.swift */; };
+		FA4C3F581FD1D166009F149C /* Pods_att2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4C3F591FD1D166009F149C /* Pods_att2.framework */; };
+		FA4C3F5A1FD1D174009F149C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684D0E9F1FBCB73B00A55755 /* MapKit.framework */; };
 		FA882E501FC26F5C00D609BC /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FA882E481FC26F5B00D609BC /* Base.lproj */; };
 		FA882E511FC26F5C00D609BC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA882E491FC26F5B00D609BC /* SearchViewController.swift */; };
 		FA882E531FC26F5C00D609BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA882E4B1FC26F5B00D609BC /* AppDelegate.swift */; };
@@ -76,6 +76,8 @@
 		FA0323C31FC4CF440087DAF0 /* GroupListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListViewController.swift; sourceTree = "<group>"; };
 		FA22A9AF1FCDFFFB00C7EE45 /* GroupInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfoViewController.swift; sourceTree = "<group>"; };
 		FA22A9B11FCE662F00C7EE45 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
+		FA4C3F571FD1D0BB009F149C /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA4C3F591FD1D166009F149C /* Pods_att2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_att2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA882E481FC26F5B00D609BC /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
 		FA882E491FC26F5B00D609BC /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FA882E4B1FC26F5B00D609BC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -96,8 +98,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				684D0EA01FBCB73B00A55755 /* MapKit.framework in Frameworks */,
-				C47C5C83F30BCEACD86B0F28 /* Pods_att2.framework in Frameworks */,
+				FA4C3F5A1FD1D174009F149C /* MapKit.framework in Frameworks */,
+				FA4C3F581FD1D166009F149C /* Pods_att2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +192,8 @@
 		684D0E9E1FBCB73B00A55755 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FA4C3F591FD1D166009F149C /* Pods_att2.framework */,
+				FA4C3F571FD1D0BB009F149C /* SwiftyJSON.framework */,
 				684D0E9F1FBCB73B00A55755 /* MapKit.framework */,
 				A012574C08B72B360AA50F9F /* Pods_att2.framework */,
 				2EC02B69AEA1238522229691 /* Pods_att2Tests.framework */,
@@ -370,12 +374,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-att2/Pods-att2-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
