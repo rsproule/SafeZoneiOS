@@ -97,7 +97,7 @@ class GroupListViewController: UIViewController, UITableViewDelegate, UITableVie
                     let memberIds: [String] = self.parseMembers(membersDict: grp["members"]!);
                     let eventIds: [String] = self.parseEvents(eventsDict: grp["events"]!);
                     
-                    let group = Group(name: name, members: [], events: [])
+                    let group = Group(name: name, members: [], events: [], id: snap.key)
                     
                    
                     self.memberIdsArray.append(memberIds);
@@ -164,6 +164,7 @@ class GroupListViewController: UIViewController, UITableViewDelegate, UITableVie
             let detailVC = segue.destination as! GroupInfoViewController
             detailVC.eventIds = eventIdsArray[sender as! Int];
             detailVC.memberIds = memberIdsArray[sender as! Int];
+            detailVC.group = groupsArray[sender as! Int];
         }
     }
     

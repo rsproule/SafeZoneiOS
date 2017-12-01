@@ -21,7 +21,7 @@ class CreateGroupViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func createGroupButton(_ sender: Any) {
-        let newGroup = Group(name: groupNameTextField.text!, members: newGroupMembers, events: [])
+        let newGroup = Group(name: groupNameTextField.text!, members: newGroupMembers, events: [], id: "")
         
         if(newGroupMembers.count > 1 && groupNameTextField.text != ""){
             // send new group to firebase for each member, then segue back to groups
@@ -59,7 +59,7 @@ class CreateGroupViewController: UIViewController {
             
             
             groupRef?.setValue(groupDICT);
-            print("group sent")
+           // print("group sent")
             
             for user in newGroupMembers {
                memberRef?.child(user.Id)
@@ -67,9 +67,10 @@ class CreateGroupViewController: UIViewController {
                 .child((groupRef?.key)!)
                 .setValue(true)
             }
-            print("Users sent")
+          //  print("Users sent")
             //segue createdGroup
-            self.performSegue(withIdentifier: "createdGroup", sender: self)
+            //self.performSegue(withIdentifier: "createdGroup", sender: self)
+            self.dismiss(animated: true, completion: nil)
 
             
             

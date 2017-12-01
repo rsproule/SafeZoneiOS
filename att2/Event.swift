@@ -7,14 +7,15 @@
 //
 
 import Foundation
-
+import MapKit
 
 class Event: Equatable {
     
     
-    var location: LocationPoint
+    var location: CLLocation
     var eventName: String;
     var date: Date;
+    var group: Group;
     var Id: String
     
     public static func ==(lhs: Event, rhs: Event) -> Bool {
@@ -31,11 +32,12 @@ class Event: Equatable {
         return true;
     }
     
-    init(location: LocationPoint, name: String, date: Date, Id: String){
+    init(location: CLLocation, name: String, date: Date, Id: String, group: Group){
         self.date = date;
         self.location = location;
         self.eventName = name;
         self.Id = Id;
+        self.group = group;
     }
     
     

@@ -9,46 +9,29 @@
 import Foundation
 
 
-class Group: Hashable{
-    var hashValue: Int
+class Group {
     
-    static func ==(lhs: Group, rhs: Group) -> Bool {
-        if(lhs.groupName != rhs.groupName){
-            return false;
-        }
-        
-        for e in lhs.events {
-            for re in rhs.events{
-                if(e != re){
-                    return false;
-                }
-            }
-        }
-        
-        for m in lhs.members {
-            for rm in rhs.members {
-                if(m != rm){
-                    return false;
-                }
-            }
-        }
-        
-        return true
-    }
+   
     
     
     var groupName: String;
     var members: [User];
     var events: [Event];
+    var id : String;
     
-    
-    init(name: String, members: [User], events: [Event]){
+    init(name: String, members: [User], events: [Event], id: String){
         self.events = events;
         self.groupName = name;
         self.members = members;
+        self.id = id;
         
-        self.hashValue = groupName.hashValue
-        
+    }
+    
+    init(){
+        self.events = [];
+        self.groupName = "";
+        self.members = [];
+        self.id = ""
     }
     
     

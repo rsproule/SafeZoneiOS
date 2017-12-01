@@ -25,7 +25,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
 
     @IBAction func myLoc(_ sender: UIButton) {
         let somePoint1 = LocationPoint(title: "User1Location", locationName: "User1", coordinate: myLocation.coordinate)
-        print(myLocation.coordinate)
+        //print(myLocation.coordinate)
         
         map.addAnnotation(somePoint1)
         
@@ -95,7 +95,7 @@ class ViewController: UIViewController,CLLocationManagerDelegate {
         myLocation = locations[0]
         
         let accuracy = myLocation.horizontalAccuracy
-        print("accuracy is \(accuracy)")
+       // print("accuracy is \(accuracy)")
         
         
         //references Shrikar Archak

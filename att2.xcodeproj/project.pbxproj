@@ -19,6 +19,7 @@
 		FA22A9B21FCE662F00C7EE45 /* CreateGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22A9B11FCE662F00C7EE45 /* CreateGroupViewController.swift */; };
 		FA4C3F581FD1D166009F149C /* Pods_att2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA4C3F591FD1D166009F149C /* Pods_att2.framework */; };
 		FA4C3F5A1FD1D174009F149C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684D0E9F1FBCB73B00A55755 /* MapKit.framework */; };
+		FA765DBF1FD200D8000741A6 /* EventInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA765DBE1FD200D8000741A6 /* EventInfoViewController.swift */; };
 		FA882E501FC26F5C00D609BC /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FA882E481FC26F5B00D609BC /* Base.lproj */; };
 		FA882E511FC26F5C00D609BC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA882E491FC26F5B00D609BC /* SearchViewController.swift */; };
 		FA882E531FC26F5C00D609BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA882E4B1FC26F5B00D609BC /* AppDelegate.swift */; };
@@ -32,6 +33,8 @@
 		FA8E9C811FC542390011ADD2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8E9C801FC542390011ADD2 /* LoginViewController.swift */; };
 		FA90750C1FC638110079CFDA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90750B1FC638110079CFDA /* MainTabBarController.swift */; };
 		FA9075101FC63EE00079CFDA /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90750F1FC63EE00079CFDA /* RegistrationViewController.swift */; };
+		FAE3686E1FD1E9E100F359B4 /* SelectLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3686D1FD1E9E100F359B4 /* SelectLocationViewController.swift */; };
+		FAE9A4861FD2182E00B77EFA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9A4851FD2182E00B77EFA /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +81,7 @@
 		FA22A9B11FCE662F00C7EE45 /* CreateGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupViewController.swift; sourceTree = "<group>"; };
 		FA4C3F571FD1D0BB009F149C /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA4C3F591FD1D166009F149C /* Pods_att2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_att2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA765DBE1FD200D8000741A6 /* EventInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoViewController.swift; sourceTree = "<group>"; };
 		FA882E481FC26F5B00D609BC /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
 		FA882E491FC26F5B00D609BC /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FA882E4B1FC26F5B00D609BC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 		FA8E9C801FC542390011ADD2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		FA90750B1FC638110079CFDA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = /Users/ryansproule/Documents/CSE438/SafeZoneiOS/att2/MainTabBarController.swift; sourceTree = "<absolute>"; };
 		FA90750F1FC63EE00079CFDA /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = /Users/ryansproule/Documents/CSE438/SafeZoneiOS/att2/RegistrationViewController.swift; sourceTree = "<absolute>"; };
+		FAE3686D1FD1E9E100F359B4 /* SelectLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationViewController.swift; sourceTree = "<group>"; };
+		FAE9A4851FD2182E00B77EFA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,8 +161,11 @@
 				FA882E4C1FC26F5C00D609BC /* LocationPoint.swift */,
 				FA90750B1FC638110079CFDA /* MainTabBarController.swift */,
 				FA882E491FC26F5B00D609BC /* SearchViewController.swift */,
+				FA765DBE1FD200D8000741A6 /* EventInfoViewController.swift */,
 				FA882E4F1FC26F5C00D609BC /* ViewController.swift */,
+				FAE3686D1FD1E9E100F359B4 /* SelectLocationViewController.swift */,
 				684D0E721FBCB5FA00A55755 /* Main.storyboard */,
+				FAE9A4851FD2182E00B77EFA /* HomeViewController.swift */,
 				FA22A9B11FCE662F00C7EE45 /* CreateGroupViewController.swift */,
 				FA22A9AF1FCDFFFB00C7EE45 /* GroupInfoViewController.swift */,
 				FA8E9C801FC542390011ADD2 /* LoginViewController.swift */,
@@ -373,6 +382,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-att2/Pods-att2-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/DateTimePicker/DateTimePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -380,6 +390,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateTimePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -526,6 +537,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA765DBF1FD200D8000741A6 /* EventInfoViewController.swift in Sources */,
 				FA8E9C811FC542390011ADD2 /* LoginViewController.swift in Sources */,
 				FA8E9C7F1FC4D0F80011ADD2 /* Event.swift in Sources */,
 				FA90750C1FC638110079CFDA /* MainTabBarController.swift in Sources */,
@@ -533,8 +545,10 @@
 				FA882E511FC26F5C00D609BC /* SearchViewController.swift in Sources */,
 				FA882E541FC26F5C00D609BC /* LocationPoint.swift in Sources */,
 				FA0323C41FC4CF440087DAF0 /* GroupListViewController.swift in Sources */,
+				FAE3686E1FD1E9E100F359B4 /* SelectLocationViewController.swift in Sources */,
 				FA8E9C7B1FC4D07F0011ADD2 /* Group.swift in Sources */,
 				FA22A9B21FCE662F00C7EE45 /* CreateGroupViewController.swift in Sources */,
+				FAE9A4861FD2182E00B77EFA /* HomeViewController.swift in Sources */,
 				FA22A9B01FCDFFFB00C7EE45 /* GroupInfoViewController.swift in Sources */,
 				FA882E571FC26F5C00D609BC /* ViewController.swift in Sources */,
 				FA882E531FC26F5C00D609BC /* AppDelegate.swift in Sources */,
