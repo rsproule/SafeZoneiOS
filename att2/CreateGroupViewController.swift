@@ -21,7 +21,7 @@ class CreateGroupViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     @IBAction func createGroupButton(_ sender: Any) {
-        let newGroup = Group(name: groupNameTextField.text!, members: newGroupMembers, events: [])
+        let newGroup = Group(name: groupNameTextField.text!, members: newGroupMembers, events: [], id: "")
         
         if(newGroupMembers.count > 1 && groupNameTextField.text != ""){
             // send new group to firebase for each member, then segue back to groups

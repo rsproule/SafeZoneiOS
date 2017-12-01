@@ -34,6 +34,7 @@
 		FA90750C1FC638110079CFDA /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90750B1FC638110079CFDA /* MainTabBarController.swift */; };
 		FA9075101FC63EE00079CFDA /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA90750F1FC63EE00079CFDA /* RegistrationViewController.swift */; };
 		FAE3686E1FD1E9E100F359B4 /* SelectLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE3686D1FD1E9E100F359B4 /* SelectLocationViewController.swift */; };
+		FAE9A4861FD2182E00B77EFA /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE9A4851FD2182E00B77EFA /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		FA90750B1FC638110079CFDA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = /Users/ryansproule/Documents/CSE438/SafeZoneiOS/att2/MainTabBarController.swift; sourceTree = "<absolute>"; };
 		FA90750F1FC63EE00079CFDA /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = /Users/ryansproule/Documents/CSE438/SafeZoneiOS/att2/RegistrationViewController.swift; sourceTree = "<absolute>"; };
 		FAE3686D1FD1E9E100F359B4 /* SelectLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationViewController.swift; sourceTree = "<group>"; };
+		FAE9A4851FD2182E00B77EFA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +165,7 @@
 				FA882E4F1FC26F5C00D609BC /* ViewController.swift */,
 				FAE3686D1FD1E9E100F359B4 /* SelectLocationViewController.swift */,
 				684D0E721FBCB5FA00A55755 /* Main.storyboard */,
+				FAE9A4851FD2182E00B77EFA /* HomeViewController.swift */,
 				FA22A9B11FCE662F00C7EE45 /* CreateGroupViewController.swift */,
 				FA22A9AF1FCDFFFB00C7EE45 /* GroupInfoViewController.swift */,
 				FA8E9C801FC542390011ADD2 /* LoginViewController.swift */,
@@ -545,6 +548,7 @@
 				FAE3686E1FD1E9E100F359B4 /* SelectLocationViewController.swift in Sources */,
 				FA8E9C7B1FC4D07F0011ADD2 /* Group.swift in Sources */,
 				FA22A9B21FCE662F00C7EE45 /* CreateGroupViewController.swift in Sources */,
+				FAE9A4861FD2182E00B77EFA /* HomeViewController.swift in Sources */,
 				FA22A9B01FCDFFFB00C7EE45 /* GroupInfoViewController.swift in Sources */,
 				FA882E571FC26F5C00D609BC /* ViewController.swift in Sources */,
 				FA882E531FC26F5C00D609BC /* AppDelegate.swift in Sources */,

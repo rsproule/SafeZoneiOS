@@ -24,7 +24,7 @@ class GroupInfoViewController: UIViewController, UITableViewDataSource, UITableV
     
     }
     
-    var group: Group = Group(name: "Group Info", members: [], events: []);
+    var group: Group = Group();
     
     var eventIds: [String] = []
     var memberIds: [String] = []
@@ -81,11 +81,11 @@ class GroupInfoViewController: UIViewController, UITableViewDataSource, UITableV
             eventsRef.observe( .value, with: {(snap) -> Void in
                 if let eventInfoDict = snap.value as? Dictionary<String, Any> {
                     let eventName = eventInfoDict["name"] as! String
-                    let loc: LocationPoint = self.parseLocation(locationDict: eventInfoDict["location"]!)
+                    let loc: CLLocation = self.parseLocation(locationDict: eventInfoDict["location"]!)
 
-                    let date: Date = Date(timeIntervalSince1970: eventInfoDict["date"] as! Double)
+                    let date: Date = Date(timeIntervalSince1970: eventInfoDict["start"] as! Double)
                     
-                    self.group.events.append(Event(location: loc, name: eventName, date: date, Id: eventId))
+                    self.group.events.append(Event(location: loc, name: eventName, date: date, Id: eventId, group: self.group))
                     self.groupEventTable.insertRows(at: [IndexPath(row: self.group.events.count-1, section: 0)], with: UITableViewRowAnimation.automatic)
 
                 }else{
@@ -98,16 +98,16 @@ class GroupInfoViewController: UIViewController, UITableViewDataSource, UITableV
         
     }
     
-    func parseLocation(locationDict: Any) -> LocationPoint{
+    func parseLocation(locationDict: Any) -> CLLocation{
         
         let loc = locationDict as! Dictionary<String, Any>
         
         let latitude = loc["latitude"] as! Double
         let longitude = loc["longitude"] as! Double
-        let name = loc["name"] as! String
-        let coord = CLLocationCoordinate2DMake(latitude, longitude)
-        
-        return LocationPoint(title: "Event Location", locationName: name, coordinate: coord)
+      //  let name = loc["name"] as! String
+        //let coord = CLLocationCoordinate2DMake(latitude, longitude)
+        return CLLocation(latitude: latitude, longitude: longitude)
+        //return LocationPoint(title: "Event Location", locationName: name, coordinate: coord)
     }
 
     override func didReceiveMemoryWarning() {
@@ -161,15 +161,19 @@ class GroupInfoViewController: UIViewController, UITableViewDataSource, UITableV
     
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        let dest = segue.destination as! SelectLocationViewController
+        
+        dest.group = self.group;
+        
     }
-    */
+ 
 
 }
 
