@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "684D0E6A1FBCB5FA00A55755"
-               BuildableName = "att2.app"
-               BlueprintName = "att2"
-               ReferencedContainer = "container:att2.xcodeproj">
+               BlueprintIdentifier = "E4DD95323C54A78F879DAB0F1508B8E7"
+               BuildableName = "nanopb.framework"
+               BlueprintName = "nanopb"
+               ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,36 +28,7 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "684D0E7E1FBCB5FA00A55755"
-               BuildableName = "att2Tests.xctest"
-               BlueprintName = "att2Tests"
-               ReferencedContainer = "container:att2.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "684D0E891FBCB5FA00A55755"
-               BuildableName = "att2UITests.xctest"
-               BlueprintName = "att2UITests"
-               ReferencedContainer = "container:att2.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "684D0E6A1FBCB5FA00A55755"
-            BuildableName = "att2.app"
-            BlueprintName = "att2"
-            ReferencedContainer = "container:att2.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>
@@ -71,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "684D0E6A1FBCB5FA00A55755"
-            BuildableName = "att2.app"
-            BlueprintName = "att2"
-            ReferencedContainer = "container:att2.xcodeproj">
+            BlueprintIdentifier = "E4DD95323C54A78F879DAB0F1508B8E7"
+            BuildableName = "nanopb.framework"
+            BlueprintName = "nanopb"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -90,16 +60,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "684D0E6A1FBCB5FA00A55755"
-            BuildableName = "att2.app"
-            BlueprintName = "att2"
-            ReferencedContainer = "container:att2.xcodeproj">
+            BlueprintIdentifier = "E4DD95323C54A78F879DAB0F1508B8E7"
+            BuildableName = "nanopb.framework"
+            BlueprintName = "nanopb"
+            ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

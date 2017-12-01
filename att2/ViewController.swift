@@ -10,6 +10,7 @@ import UIKit
 import CoreLocation
 import MapKit
 
+// Sasha made this change !!!!!!
 
 // GLOBAL USER DEFINED HERE CAN BE ACCESSED IN ANY VC
 var CURRENT_USER_ID: String = "";
