@@ -9,6 +9,7 @@ target 'att2' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'SwiftyJSON'
+  pod 'DateTimePicker'
   #pod 'GoogleSignIn'
   
   target 'att2Tests' do
