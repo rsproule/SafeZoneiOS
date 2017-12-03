@@ -17,13 +17,31 @@ class CurrentEventViewController: UIViewController, CLLocationManagerDelegate, M
     @IBAction func showEventInfo(_ sender: UIBarButtonItem) {
         
     }
+    @IBAction func gotoMyLocation(_ sender: Any) {
+        let geoLocation = CLGeocoder()
+        geoLocation.reverseGeocodeLocation(myLocation, completionHandler: { (data, error) -> Void in
+            self.map.centerCoordinate = self.myLocation.coordinate
+        })
+    }
+    @IBAction func gotoGroupLocation(_ sender: Any) {
+        let geoLocation = CLGeocoder()
+        geoLocation.reverseGeocodeLocation(groupLocation, completionHandler: { (data, error) -> Void in
+            self.map.centerCoordinate = self.groupLocation.coordinate
+            
+            let reg = MKCoordinateRegionMakeWithDistance(self.groupLocation.coordinate, self.radius, self.radius)
+            self.map.setRegion(reg, animated: true)
+            
+        })
+        
+
+    }
     
     
     var locationManager = CLLocationManager();
     var groupLocation =  CLLocation();
     var myLocation = CLLocation();
-    var currentEvent = Event();
     var hasActiveEvent = true;
+    var radius = 0.0
     var memberAnnotations: [MKAnnotation] = []
     var eventId: String = ""
     
@@ -80,9 +98,9 @@ class CurrentEventViewController: UIViewController, CLLocationManagerDelegate, M
                     longitude: loc["longitude"] as! Double
                 )
                 
-                let radius = (event["radius"] as! Double) * 100.0; // should find actual conversion to miles
+                self.radius = (event["radius"] as! Double) * 100.0; // should find actual conversion to miles
                 
-                self.updateLocationView(newLocation: self.groupLocation, radius: radius);
+                self.updateLocationView(newLocation: self.groupLocation, radius: self.radius);
                 
                 /* --------------------- Member stuff --------------------------------- */
                 let members = event["members"] as! Dictionary<String, Any>
@@ -172,7 +190,7 @@ class CurrentEventViewController: UIViewController, CLLocationManagerDelegate, M
         if overlay is MKCircle {
             let circle = MKCircleRenderer(overlay: overlay)
             circle.strokeColor = UIColor.blue
-            circle.fillColor = UIColor(red: 0, green: 0, blue: 255, alpha: 0.1)
+            circle.fillColor = UIColor(red: 0, green: 0, blue: 250, alpha: 0.1)
             circle.lineWidth = 1
             return circle
         } else {
