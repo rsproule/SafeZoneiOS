@@ -55,7 +55,7 @@ class EventHistoryViewController: UIViewController, UITableViewDelegate, UITable
                     let startTime = event["start"] as! TimeInterval
                     let endTime = event["end"] as! TimeInterval
                     let groupID = event["group"] as! String;
-                    
+                    let theGroup  = self.getGroup(id: groupID)
                     let evnt = Event(
                         location: CLLocation(
                             latitude: location["latitude"] as! CLLocationDegrees,
@@ -88,6 +88,25 @@ class EventHistoryViewController: UIViewController, UITableViewDelegate, UITable
         return events.count;
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "historicEventsDetailSegue", sender: indexPath.row)
+    }
+    
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+        if segue.identifier ==  "historicEventsDetailSegue" {
+            let historicEvent = segue.destination as! HistoricEventDetail
+            print(sender as! Int)
+            historicEvent.event = events[(sender as! Int)];
+            
+        }
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("building..")
         var cell: UITableViewCell?
@@ -111,5 +130,24 @@ class EventHistoryViewController: UIViewController, UITableViewDelegate, UITable
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    func getGroup(id: String){
+        print(id)
+        var ref: DatabaseReference!
+        ref = Database.database().reference()
+        
+        var group:NSDictionary?
+        let search = "" + id
+        ref.child("groups").child(id as! String).observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let value = snapshot.value as? NSDictionary
+            group = value!
+            print(group)
+            // ...
+        }) { (error) in
+            print("error")
+        }
+    }
+    
+    
 }

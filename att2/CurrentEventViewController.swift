@@ -69,6 +69,7 @@ class CurrentEventViewController: UIViewController, CLLocationManagerDelegate, M
             .child("activeEvent");
         
         ref?.observe(.value, with: {(snap) -> Void in
+
             if (snap.value is NSNull){
                 let alertController = UIAlertController(title: "No event", message:
                     "Please create an event.", preferredStyle: UIAlertControllerStyle.alert)

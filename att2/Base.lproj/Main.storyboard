@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wo6-pz-8Yo">
+
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wo6-pz-8Yo">
+
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -77,11 +79,12 @@
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fKG-Us-3pm">
-                                <rect key="frame" x="-20" y="-20" width="415" height="707"/>
+                                <rect key="frame" x="-20" y="-20" width="415" height="706.5"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Fue-oU-teo">
-                                        <rect key="frame" x="22" y="85" width="377" height="557"/>
+                                        <rect key="frame" x="22" y="85" width="377" height="556.5"/>
+
                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     </mapView>
                                     <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XtO-b5-y7U">
@@ -258,6 +261,9 @@
                                 <state key="normal" title="Current Event">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="switchToCurrentEvent:" destination="aN9-1o-MyR" eventType="touchUpInside" id="PFB-1n-bAq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqd-P2-yzi">
                                 <rect key="frame" x="82" y="392" width="210" height="53"/>
@@ -284,6 +290,7 @@
                             <constraint firstAttribute="trailing" secondItem="CEv-Al-FIh" secondAttribute="trailing" id="PqV-0s-ysx"/>
                             <constraint firstItem="yqd-P2-yzi" firstAttribute="trailing" secondItem="Gw7-ny-i23" secondAttribute="trailing" id="Wqe-qO-dFR"/>
                             <constraint firstItem="yqd-P2-yzi" firstAttribute="leading" secondItem="Gw7-ny-i23" secondAttribute="leading" id="cup-gr-phX"/>
+                            <constraint firstItem="Gw7-ny-i23" firstAttribute="leading" secondItem="PJe-Fb-z1T" secondAttribute="leadingMargin" constant="66" id="fU3-G1-Zy5"/>
                             <constraint firstItem="CEv-Al-FIh" firstAttribute="centerX" secondItem="yqd-P2-yzi" secondAttribute="centerX" id="hCd-5K-hFS"/>
                             <constraint firstItem="CEv-Al-FIh" firstAttribute="leading" secondItem="PJe-Fb-z1T" secondAttribute="leading" id="qG5-zu-gdr"/>
                             <constraint firstItem="76M-Ca-7CY" firstAttribute="top" secondItem="Gw7-ny-i23" secondAttribute="bottom" constant="85" id="reu-fl-jBM"/>
@@ -294,7 +301,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4hq-xP-jPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2423.1999999999998" y="-1640.3940886699509"/>
+            <point key="canvasLocation" x="2423.1999999999998" y="-1641.2293853073465"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="DIT-N6-EkN">
@@ -346,11 +353,79 @@
                     <navigationItem key="navigationItem" title="My Event History" id="e7l-hv-57b"/>
                     <connections>
                         <outlet property="eventsTableView" destination="T3u-U2-gNl" id="eDq-0h-HB3"/>
+                        <segue destination="ABb-IQ-GvH" kind="show" identifier="historicEventsDetailSegue" id="TRe-BW-JQ8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kxl-Wi-dxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1997.5999999999999" y="-791.37931034482767"/>
+        </scene>
+        <!--Historic Event Detail-->
+        <scene sceneID="kdi-wR-4W8">
+            <objects>
+                <viewController id="ABb-IQ-GvH" customClass="HistoricEventDetail" customModule="att2" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vLk-M4-1J6"/>
+                        <viewControllerLayoutGuide type="bottom" id="uJN-92-Dyb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BIb-PJ-lr0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hki-Xp-LIg">
+                                <rect key="frame" x="81" y="149" width="213" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Members:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vh-0K-qAE">
+                                <rect key="frame" x="16" y="191" width="123" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.23806883901679388" green="1" blue="0.73359538952836112" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nHb-yP-S7P">
+                                <rect key="frame" x="16" y="223" width="343" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7Th-8c-AXt">
+                                <rect key="frame" x="16" y="358" width="343" height="238"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YP6-EY-Azg">
+                                <rect key="frame" x="16" y="317" width="123" height="33"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.238068839" green="1" blue="0.73359538950000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q9d-Ih-nEc">
+                                <rect key="frame" x="16" y="72" width="343" height="66"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="42"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="date" destination="hki-Xp-LIg" id="4M5-rB-A5U"/>
+                        <outlet property="groupName" destination="Q9d-Ih-nEc" id="KNe-K2-D4x"/>
+                        <outlet property="map" destination="7Th-8c-AXt" id="di8-Ga-L1f"/>
+                        <outlet property="members" destination="nHb-yP-S7P" id="TCn-jH-xOe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B0r-VU-pMN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2720.8000000000002" y="-792.05397301349331"/>
         </scene>
         <!--My Groups-->
         <scene sceneID="WbA-hv-IGM">
@@ -880,7 +955,8 @@
                     <tabBarItem key="tabBarItem" title="Home" image="house-7" id="Uvk-43-e4F"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8vn-8X-2q2">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -899,7 +975,8 @@
                     <tabBarItem key="tabBarItem" title="My Groups" image="woman-man-7" id="d0m-5z-fXf"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jsm-vu-7eJ">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1076,7 +1153,8 @@
                     <tabBarItem key="tabBarItem" title="Current Event" image="share-connect-7" id="nut-sV-GCK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="fsH-bq-6Zz">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1095,7 +1173,8 @@
                     <tabBarItem key="tabBarItem" title="Event History" image="book-simple-7" id="bhJ-uS-fQs"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8xk-CJ-2EY">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
