@@ -69,9 +69,10 @@ class CurrentEventViewController: UIViewController, CLLocationManagerDelegate, M
             .child("activeEvent");
         
         ref?.observe(.value, with: {(snap) -> Void in
-            self.eventId = snap.value as! String
-            self.listenToEvent(eventId: self.eventId);
-            
+            if let theEventId = snap.value as? String {
+                self.eventId = theEventId
+                self.listenToEvent(eventId: self.eventId);
+            }
         })
         
     }

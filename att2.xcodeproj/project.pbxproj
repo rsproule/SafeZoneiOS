@@ -13,6 +13,7 @@
 		684D0E791FBCB5FA00A55755 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 684D0E771FBCB5FA00A55755 /* LaunchScreen.storyboard */; };
 		684D0E841FBCB5FA00A55755 /* att2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D0E831FBCB5FA00A55755 /* att2Tests.swift */; };
 		684D0E8F1FBCB5FA00A55755 /* att2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 684D0E8E1FBCB5FA00A55755 /* att2UITests.swift */; };
+		A0C956301FD48DA800322416 /* HistoricEventDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0C9562F1FD48DA800322416 /* HistoricEventDetail.swift */; };
 		A66AF909259FD78B3E14FE42 /* Pods_att2Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EC02B69AEA1238522229691 /* Pods_att2Tests.framework */; };
 		FA0323C41FC4CF440087DAF0 /* GroupListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0323C31FC4CF440087DAF0 /* GroupListViewController.swift */; };
 		FA22A9B01FCDFFFB00C7EE45 /* GroupInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA22A9AF1FCDFFFB00C7EE45 /* GroupInfoViewController.swift */; };
@@ -77,6 +78,7 @@
 		88B1963C5D9F4795AAD891B8 /* Pods-att2UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-att2UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-att2UITests/Pods-att2UITests.release.xcconfig"; sourceTree = "<group>"; };
 		98FD9146AEDA6080648D1379 /* Pods-att2Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-att2Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-att2Tests/Pods-att2Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		A012574C08B72B360AA50F9F /* Pods_att2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_att2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0C9562F1FD48DA800322416 /* HistoricEventDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoricEventDetail.swift; sourceTree = "<group>"; };
 		A70B0A97272C6050B2EE3544 /* Pods-att2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-att2.release.xcconfig"; path = "Pods/Target Support Files/Pods-att2/Pods-att2.release.xcconfig"; sourceTree = "<group>"; };
 		FA0323C31FC4CF440087DAF0 /* GroupListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupListViewController.swift; sourceTree = "<group>"; };
 		FA22A9AF1FCDFFFB00C7EE45 /* GroupInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupInfoViewController.swift; sourceTree = "<group>"; };
@@ -97,8 +99,8 @@
 		FA8E9C7C1FC4D0AF0011ADD2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FA8E9C7E1FC4D0F80011ADD2 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		FA8E9C801FC542390011ADD2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		FA90750B1FC638110079CFDA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = /Users/ryansproule/Documents/CSE438/SafeZoneiOS/att2/MainTabBarController.swift; sourceTree = "<absolute>"; };
-		FA90750F1FC63EE00079CFDA /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = /Users/ryansproule/Documents/CSE438/SafeZoneiOS/att2/RegistrationViewController.swift; sourceTree = "<absolute>"; };
+		FA90750B1FC638110079CFDA /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainTabBarController.swift; path = att2/MainTabBarController.swift; sourceTree = SOURCE_ROOT; };
+		FA90750F1FC63EE00079CFDA /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegistrationViewController.swift; path = att2/RegistrationViewController.swift; sourceTree = SOURCE_ROOT; };
 		FAE3686D1FD1E9E100F359B4 /* SelectLocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectLocationViewController.swift; sourceTree = "<group>"; };
 		FAE9A4851FD2182E00B77EFA /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -170,6 +172,7 @@
 				FAE3686D1FD1E9E100F359B4 /* SelectLocationViewController.swift */,
 				684D0E721FBCB5FA00A55755 /* Main.storyboard */,
 				FA8813601FD39A30006D6B10 /* EventHistoryViewController.swift */,
+				A0C9562F1FD48DA800322416 /* HistoricEventDetail.swift */,
 				FA88135E1FD36372006D6B10 /* CurrentEventViewController.swift */,
 				FAE9A4851FD2182E00B77EFA /* HomeViewController.swift */,
 				FA22A9B11FCE662F00C7EE45 /* CreateGroupViewController.swift */,
@@ -555,6 +558,7 @@
 				FAE3686E1FD1E9E100F359B4 /* SelectLocationViewController.swift in Sources */,
 				FA8E9C7B1FC4D07F0011ADD2 /* Group.swift in Sources */,
 				FA22A9B21FCE662F00C7EE45 /* CreateGroupViewController.swift in Sources */,
+				A0C956301FD48DA800322416 /* HistoricEventDetail.swift in Sources */,
 				FAE9A4861FD2182E00B77EFA /* HomeViewController.swift in Sources */,
 				FA22A9B01FCDFFFB00C7EE45 /* GroupInfoViewController.swift in Sources */,
 				FA8813611FD39A30006D6B10 /* EventHistoryViewController.swift in Sources */,

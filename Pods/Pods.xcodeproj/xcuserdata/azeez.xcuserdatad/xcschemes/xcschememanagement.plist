@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DateTimePicker.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
 		<key>GoogleToolboxForMac.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -24,6 +29,16 @@
 			<key>orderHint</key>
 			<integer>5</integer>
 		</dict>
+		<key>SwiftyJSON.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
+		<key>leveldb-library.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>6</integer>
+		</dict>
 		<key>nanopb.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -37,7 +52,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>11CB6E0671B4055EBBE35633E213256B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>26034FA23F405A69903B3D846ACF4115</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>3B08C49A396BAA0D9DCAD4460CC52F95</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5F72C1852584A5C1073B32B80AF17541</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8CF652E98D583891A4DAC61DECDA76FD</key>
 		<dict>
 			<key>primary</key>
 			<true/>

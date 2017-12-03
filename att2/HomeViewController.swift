@@ -21,7 +21,12 @@ class HomeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func switchToCurrentEvent(_ sender: Any) {
+        self.tabBarController?.selectedIndex = 0
+    }
 
+    
+    
     /*
     // MARK: - Navigation
 
