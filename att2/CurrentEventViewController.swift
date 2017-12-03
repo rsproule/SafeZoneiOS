@@ -69,8 +69,16 @@ class CurrentEventViewController: UIViewController, CLLocationManagerDelegate, M
             .child("activeEvent");
         
         ref?.observe(.value, with: {(snap) -> Void in
-            self.eventId = snap.value as! String
-            self.listenToEvent(eventId: self.eventId);
+            if (snap.value is NSNull){
+                let alertController = UIAlertController(title: "No event", message:
+                    "Please create an event.", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+                
+                self.present(alertController, animated: true, completion: nil)
+            } else{
+                self.eventId = snap.value as! String
+                self.listenToEvent(eventId: self.eventId);
+            }
             
         })
         
@@ -124,7 +132,7 @@ class CurrentEventViewController: UIViewController, CLLocationManagerDelegate, M
                         self.memberAnnotations.append(destLocation);
                     }else{
                         //User has not provided a location yet
-                       // print("User has not given a location")
+                        print("User has not given a location")
                     }
                     
                 }

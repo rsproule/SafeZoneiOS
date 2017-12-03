@@ -98,6 +98,8 @@ class SelectLocationViewController: UIViewController,CLLocationManagerDelegate {
         myLocation = locations[0]
         
         let accuracy = myLocation.horizontalAccuracy
+        
+        
         // print("accuracy is \(accuracy)")
         
         
