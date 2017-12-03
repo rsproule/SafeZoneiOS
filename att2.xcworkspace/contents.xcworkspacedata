@@ -5,6 +5,7 @@
       location = "group:att2/RegistrationViewController.swift">
    </FileRef>
    <FileRef
+
       location = "absolute:att2/MainTabBarController.swift">
    </FileRef>
    <FileRef
