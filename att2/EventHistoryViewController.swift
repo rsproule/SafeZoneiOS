@@ -19,6 +19,9 @@ class EventHistoryViewController: UIViewController, UITableViewDelegate, UITable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        eventsTableView.delegate = self
+        eventsTableView.dataSource = self;
         getEvents();
         // Do any additional setup after loading the view.
     }
@@ -68,7 +71,7 @@ class EventHistoryViewController: UIViewController, UITableViewDelegate, UITable
                     self.events.append(evnt);
                     print(self.events)
                     //self.eventsTableView.insertRows(at: [IndexPath(row: self.events.count-1, section: 0)], with: UITableViewRowAnimation.automatic)
-                    //self.eventsTableView.reloadData()
+                    self.eventsTableView.reloadData()
                 }else{
                     print("error")
                 }
