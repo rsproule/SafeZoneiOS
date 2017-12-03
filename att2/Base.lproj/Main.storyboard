@@ -512,51 +512,86 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibP-tp-KxJ">
-                                <rect key="frame" x="117" y="96" width="140" height="56"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sbq-cU-IFB">
-                                <rect key="frame" x="16" y="203" width="343" height="162"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Members " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1W4-L0-tYp">
-                                <rect key="frame" x="16" y="174" width="77" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Group Event History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM0-Kk-Wtz">
-                                <rect key="frame" x="16" y="387" width="154" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WAV-5v-YGb">
-                                <rect key="frame" x="16" y="422" width="343" height="181"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omD-Sq-sOC">
-                                <rect key="frame" x="87" y="643" width="200" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Create Event with Group">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="createEventButton:" destination="AfO-o8-PxM" eventType="touchUpInside" id="1cB-4l-8yk"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="rHI-zU-PQt"/>
-                                </connections>
-                            </button>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o0M-lt-dhu">
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ibP-tp-KxJ">
+                                        <rect key="frame" x="16" y="22" width="343" height="56"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="56" id="ryX-hs-462"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sbq-cU-IFB">
+                                        <rect key="frame" x="16" y="144" width="343" height="162"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </tableView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Members " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1W4-L0-tYp">
+                                        <rect key="frame" x="13" y="115" width="343" height="21"/>
+                                        <color key="backgroundColor" red="0.29352911549999999" green="1" blue="0.84671801560000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Group Event History" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GM0-Kk-Wtz">
+                                        <rect key="frame" x="16" y="342" width="343" height="21"/>
+                                        <color key="backgroundColor" red="0.29352911549999999" green="1" blue="0.84671801560000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="omD-Sq-sOC">
+                                        <rect key="frame" x="84" y="568" width="200" height="54"/>
+                                        <color key="backgroundColor" red="0.29352911549999999" green="1" blue="0.84671801560000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <state key="normal" title="Create Event with Group">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createEventButton:" destination="AfO-o8-PxM" eventType="touchUpInside" id="1cB-4l-8yk"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="rHI-zU-PQt"/>
+                                        </connections>
+                                    </button>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="WAV-5v-YGb">
+                                        <rect key="frame" x="16" y="371" width="343" height="181"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="181" id="84v-hu-V8c"/>
+                                        </constraints>
+                                    </tableView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ibP-tp-KxJ" firstAttribute="top" secondItem="o0M-lt-dhu" secondAttribute="top" constant="22" id="0cL-xc-TZ2"/>
+                                    <constraint firstItem="ibP-tp-KxJ" firstAttribute="leading" secondItem="sbq-cU-IFB" secondAttribute="leading" id="1oE-QE-zD0"/>
+                                    <constraint firstItem="ibP-tp-KxJ" firstAttribute="leading" secondItem="o0M-lt-dhu" secondAttribute="leading" constant="16" id="4aH-zo-LLc"/>
+                                    <constraint firstItem="GM0-Kk-Wtz" firstAttribute="top" secondItem="o0M-lt-dhu" secondAttribute="top" constant="342" id="5oO-kq-5XB"/>
+                                    <constraint firstItem="sbq-cU-IFB" firstAttribute="top" secondItem="1W4-L0-tYp" secondAttribute="bottom" constant="8" symbolic="YES" id="7NC-Lf-zyz"/>
+                                    <constraint firstItem="WAV-5v-YGb" firstAttribute="top" secondItem="GM0-Kk-Wtz" secondAttribute="bottom" constant="8" symbolic="YES" id="BTH-te-ZAC"/>
+                                    <constraint firstAttribute="trailing" secondItem="1W4-L0-tYp" secondAttribute="trailing" constant="19" id="IIT-B2-v3h"/>
+                                    <constraint firstItem="GM0-Kk-Wtz" firstAttribute="top" secondItem="sbq-cU-IFB" secondAttribute="bottom" constant="36" id="OkC-aE-9Zu"/>
+                                    <constraint firstItem="ibP-tp-KxJ" firstAttribute="leading" secondItem="WAV-5v-YGb" secondAttribute="leading" id="SNu-GQ-hYP"/>
+                                    <constraint firstItem="ibP-tp-KxJ" firstAttribute="trailing" secondItem="WAV-5v-YGb" secondAttribute="trailing" id="WmF-k1-Qq2"/>
+                                    <constraint firstItem="omD-Sq-sOC" firstAttribute="top" secondItem="WAV-5v-YGb" secondAttribute="bottom" constant="16" id="Y7m-pr-jLj"/>
+                                    <constraint firstItem="1W4-L0-tYp" firstAttribute="leading" secondItem="o0M-lt-dhu" secondAttribute="leading" constant="13" id="YmH-te-3Dg"/>
+                                    <constraint firstItem="ibP-tp-KxJ" firstAttribute="leading" secondItem="GM0-Kk-Wtz" secondAttribute="leading" id="bgV-8U-MAJ"/>
+                                    <constraint firstItem="ibP-tp-KxJ" firstAttribute="trailing" secondItem="GM0-Kk-Wtz" secondAttribute="trailing" id="bwC-3C-sWS"/>
+                                    <constraint firstItem="1W4-L0-tYp" firstAttribute="top" secondItem="ibP-tp-KxJ" secondAttribute="bottom" constant="37" id="fkx-Uh-gIW"/>
+                                    <constraint firstAttribute="bottom" secondItem="ibP-tp-KxJ" secondAttribute="bottom" constant="563" id="klJ-lX-a4K"/>
+                                    <constraint firstItem="1W4-L0-tYp" firstAttribute="centerX" secondItem="omD-Sq-sOC" secondAttribute="centerX" id="s6l-wC-gpu"/>
+                                    <constraint firstItem="ibP-tp-KxJ" firstAttribute="trailing" secondItem="sbq-cU-IFB" secondAttribute="trailing" id="suN-A5-c4M"/>
+                                    <constraint firstAttribute="trailing" secondItem="ibP-tp-KxJ" secondAttribute="trailing" constant="16" id="uOl-ha-K0a"/>
+                                    <constraint firstItem="ibP-tp-KxJ" firstAttribute="centerX" secondItem="o0M-lt-dhu" secondAttribute="centerX" id="zfU-Pv-nxq"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="o0M-lt-dhu" secondAttribute="trailing" id="57I-L7-JvQ"/>
+                            <constraint firstItem="o0M-lt-dhu" firstAttribute="leading" secondItem="lay-Se-YMu" secondAttribute="leading" id="8Lu-eg-0TI"/>
+                            <constraint firstItem="o0M-lt-dhu" firstAttribute="top" secondItem="U61-HR-w5r" secondAttribute="bottom" id="DjP-BO-9zb"/>
+                            <constraint firstItem="o0M-lt-dhu" firstAttribute="bottom" secondItem="51v-wt-vMA" secondAttribute="top" id="XFM-xn-fi1"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="groupEventTable" destination="WAV-5v-YGb" id="Gje-Pb-k6o"/>
@@ -753,10 +788,30 @@
                                 <rect key="frame" x="0.0" y="77" width="375" height="652"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </mapView>
+                            <button opaque="NO" alpha="0.65000000000000002" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Je-Jo-91J">
+                                <rect key="frame" x="245" y="96" width="105" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.57045853140000002" green="0.57047235969999999" blue="0.57046490910000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Group Location">
+                                    <color key="titleColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="gotoGroupLocation:" destination="8nq-TD-A71" eventType="touchUpInside" id="uOp-0F-Oqs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="N8c-df-9CB">
+                        <nil key="title"/>
+                        <button key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="BcV-6Z-jWo">
+                            <rect key="frame" x="145.66666666666666" y="7" width="84" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="My Location"/>
+                            <connections>
+                                <action selector="gotoMyLocation:" destination="8nq-TD-A71" eventType="touchUpInside" id="ZfH-YH-trK"/>
+                            </connections>
+                        </button>
                         <barButtonItem key="rightBarButtonItem" title="Info" id="IIj-Hj-wQ9">
                             <connections>
                                 <action selector="showEventInfo:" destination="8nq-TD-A71" id="Zjf-zv-OPP"/>

@@ -82,13 +82,13 @@ class GroupListViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let usersGroupsRef = ref.child("users").child(currentUser).child("groups");
 
-        
         // observes all the current user's groups
         usersGroupsRef.observe(.childAdded, with: {(snapshot)-> Void in
             
             let groupRef = ref.child("groups").child(snapshot.key);
             
             // do a JOIN by group ID
+            
             groupRef.observe(.value, with: {(snap) -> Void in
                 
                 if let grp = snap.value as? Dictionary<String, AnyObject>{
@@ -102,10 +102,24 @@ class GroupListViewController: UIViewController, UITableViewDelegate, UITableVie
                    
                     self.memberIdsArray.append(memberIds);
                     self.eventIdsArray.append(eventIds);
-                    self.groupsArray.append(group);
-                   
-                    self.groupTableView.insertRows(at: [IndexPath(row: self.groupsArray.count-1, section: 0)], with: UITableViewRowAnimation.automatic)
                     
+                    //check if its already there
+                    var i = 0;
+                    var dontAppend = false;
+                    for g in self.groupsArray{
+                        
+                        if(g.id == group.id){
+                            self.groupsArray[i] = group;
+                            dontAppend = true;
+                        }
+                        i+=1;
+                    }
+                    
+                    if(!dontAppend){
+                        self.groupsArray.append(group);
+                   
+                        self.groupTableView.insertRows(at: [IndexPath(row: self.groupsArray.count-1, section: 0)], with: UITableViewRowAnimation.automatic)
+                    }
                     
                 }else{
                     print("BAD DATA") // should avoid crash but IDK

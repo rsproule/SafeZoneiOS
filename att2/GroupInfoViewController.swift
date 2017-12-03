@@ -54,7 +54,7 @@ class GroupInfoViewController: UIViewController, UITableViewDataSource, UITableV
         
         for userID in memberIds {
             let userRef = ref.child("users").child(userID);
-            
+            self.group.members = [];
             userRef.observe(.value, with: {(snap) -> Void in
                 if let userInfoDict = snap.value as? Dictionary<String, Any> {
                     let fullname = userInfoDict["name"] as! String
@@ -77,7 +77,7 @@ class GroupInfoViewController: UIViewController, UITableViewDataSource, UITableV
         for eventId in eventIds {
             let eventsRef = ref.child("events").child(eventId);
             
-            
+            self.group.events = [];
             eventsRef.observe( .value, with: {(snap) -> Void in
                 if let eventInfoDict = snap.value as? Dictionary<String, Any> {
                     let eventName = eventInfoDict["name"] as! String
