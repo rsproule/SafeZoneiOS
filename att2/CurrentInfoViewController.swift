@@ -54,6 +54,7 @@ class CurrentInfoViewController: UIViewController, UITableViewDataSource, UITabl
         
         currEvRef.observe(.value, with: {(snapshot)-> Void in
             let currEvent = snapshot.value
+            self.group.members = [];
             
             let eventRef = ref.child("events").child(currEvent as! String)
             
