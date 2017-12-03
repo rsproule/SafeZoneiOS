@@ -142,7 +142,7 @@ class GroupInfoViewController: UIViewController, UITableViewDataSource, UITableV
                 cell = UITableViewCell(style: .subtitle, reuseIdentifier: "eventCell")
             }
             cell?.textLabel?.text = group.events[indexPath.row].eventName
-            cell?.detailTextLabel?.text = group.events[indexPath.row].date.toString(dateFormat: "dd-MM-YYYY");
+            cell?.detailTextLabel?.text = group.events[indexPath.row].date.toString(dateFormat: "MMMM d, YYYY h:mm a");
             
         }
         if tableView == self.memberTableView{
