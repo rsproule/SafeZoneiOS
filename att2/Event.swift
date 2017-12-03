@@ -40,5 +40,13 @@ class Event: Equatable {
         self.group = group;
     }
     
+    init(){
+        self.date = Date();
+        self.location = CLLocation();
+        self.eventName = "";
+        self.Id = "";
+        self.group = Group()
+    }
+    
     
 }

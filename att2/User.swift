@@ -31,6 +31,14 @@ class User: Equatable {
         self.json = "{\"id\": \(Id), \"name\": \(name), \"username\": \(username)}"
     }
     
+    init(){
+        self.name = "";
+        self.Id = ""
+        self.username = ""
+        
+        self.json = ""
+    }
+    
     // more TODO
     
 }

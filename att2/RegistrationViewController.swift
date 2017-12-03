@@ -52,7 +52,7 @@ class RegistrationViewController: UIViewController {
                     // good to upload
                     let userIdR = self.registerUser(name: name, username: username);
                     
-                    CURRENT_USER_ID = userIdR;
+                    CURRENT_USER.Id = userIdR;
                     self.performSegue(withIdentifier: "registrationSuccess", sender: self)
                 }else{
                     // this guy is already taken, report in error text somewhere

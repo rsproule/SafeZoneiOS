@@ -34,6 +34,11 @@ class CreateGroupViewController: UIViewController {
                 ]
             }
             
+            membersJSON[CURRENT_USER.Id] = [
+                "name" : CURRENT_USER.name,
+                "username" : CURRENT_USER.username
+            ]
+            
             
            
             let groupDICT: [String: Any] = [
@@ -116,9 +121,10 @@ class CreateGroupViewController: UIViewController {
                 let username = user["username"] as! String
                 let id = snap.key;
                 
-                self.searchResultsUsers.append(User(name: name, Id: id, username: username))
-                self.filteredResults.append(User(name: name, Id: id, username: username))
-
+                if(id != CURRENT_USER.Id){
+                    self.searchResultsUsers.append(User(name: name, Id: id, username: username))
+                    self.filteredResults.append(User(name: name, Id: id, username: username))
+                }
                 self.searchResultsTableView.reloadData()
             }
 

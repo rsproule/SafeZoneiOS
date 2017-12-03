@@ -13,7 +13,7 @@ import MapKit
 // Sasha made this change !!!!!!
 
 // GLOBAL USER DEFINED HERE CAN BE ACCESSED IN ANY VC
-var CURRENT_USER_ID: String = "";
+var CURRENT_USER: User = User();
 
 
 class ViewController: UIViewController,CLLocationManagerDelegate {

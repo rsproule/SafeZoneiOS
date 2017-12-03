@@ -128,10 +128,12 @@ class SelectLocationViewController: UIViewController,CLLocationManagerDelegate {
      override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
      // Get the new view controller using segue.destinationViewController.
      // Pass the selected object to the new view controller.
-        let dest = segue.destination as! EventInfoViewController
+        if let dest = segue.destination as? EventInfoViewController{
         
-        dest.location = self.groupLoc
-        dest.group = self.group
+            dest.location = self.groupLoc
+            dest.group = self.group
+        }
+        
         
         
      }
