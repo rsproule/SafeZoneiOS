@@ -21,6 +21,7 @@
 		FA4C3F5A1FD1D174009F149C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 684D0E9F1FBCB73B00A55755 /* MapKit.framework */; };
 		FA765DBF1FD200D8000741A6 /* EventInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA765DBE1FD200D8000741A6 /* EventInfoViewController.swift */; };
 		FA88135F1FD36372006D6B10 /* CurrentEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA88135E1FD36372006D6B10 /* CurrentEventViewController.swift */; };
+		FA8813611FD39A30006D6B10 /* EventHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8813601FD39A30006D6B10 /* EventHistoryViewController.swift */; };
 		FA882E501FC26F5C00D609BC /* Base.lproj in Resources */ = {isa = PBXBuildFile; fileRef = FA882E481FC26F5B00D609BC /* Base.lproj */; };
 		FA882E511FC26F5C00D609BC /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA882E491FC26F5B00D609BC /* SearchViewController.swift */; };
 		FA882E531FC26F5C00D609BC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA882E4B1FC26F5B00D609BC /* AppDelegate.swift */; };
@@ -84,6 +85,7 @@
 		FA4C3F591FD1D166009F149C /* Pods_att2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_att2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA765DBE1FD200D8000741A6 /* EventInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventInfoViewController.swift; sourceTree = "<group>"; };
 		FA88135E1FD36372006D6B10 /* CurrentEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentEventViewController.swift; sourceTree = "<group>"; };
+		FA8813601FD39A30006D6B10 /* EventHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventHistoryViewController.swift; sourceTree = "<group>"; };
 		FA882E481FC26F5B00D609BC /* Base.lproj */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Base.lproj; sourceTree = "<group>"; };
 		FA882E491FC26F5B00D609BC /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		FA882E4B1FC26F5B00D609BC /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +169,7 @@
 				FA882E4F1FC26F5C00D609BC /* ViewController.swift */,
 				FAE3686D1FD1E9E100F359B4 /* SelectLocationViewController.swift */,
 				684D0E721FBCB5FA00A55755 /* Main.storyboard */,
+				FA8813601FD39A30006D6B10 /* EventHistoryViewController.swift */,
 				FA88135E1FD36372006D6B10 /* CurrentEventViewController.swift */,
 				FAE9A4851FD2182E00B77EFA /* HomeViewController.swift */,
 				FA22A9B11FCE662F00C7EE45 /* CreateGroupViewController.swift */,
@@ -554,6 +557,7 @@
 				FA22A9B21FCE662F00C7EE45 /* CreateGroupViewController.swift in Sources */,
 				FAE9A4861FD2182E00B77EFA /* HomeViewController.swift in Sources */,
 				FA22A9B01FCDFFFB00C7EE45 /* GroupInfoViewController.swift in Sources */,
+				FA8813611FD39A30006D6B10 /* EventHistoryViewController.swift in Sources */,
 				FA882E571FC26F5C00D609BC /* ViewController.swift in Sources */,
 				FA882E531FC26F5C00D609BC /* AppDelegate.swift in Sources */,
 				FA8E9C7D1FC4D0AF0011ADD2 /* User.swift in Sources */,

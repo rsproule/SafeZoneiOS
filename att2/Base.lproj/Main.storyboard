@@ -62,7 +62,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dzn-9K-Xl4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="J76-FN-F8U" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="4977" y="582"/>
+            <point key="canvasLocation" x="4977" y="756"/>
         </scene>
         <!--Set Location-->
         <scene sceneID="tne-QT-ifu">
@@ -323,10 +323,10 @@
             </objects>
             <point key="canvasLocation" x="3767.1999999999998" y="-1981.0344827586207"/>
         </scene>
-        <!--Event History-->
+        <!--My Event History-->
         <scene sceneID="8nj-KR-MLx">
             <objects>
-                <viewController id="Zsf-lt-MbP" sceneMemberID="viewController">
+                <viewController id="Zsf-lt-MbP" customClass="EventHistoryViewController" customModule="att2" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="WOs-JQ-OcW"/>
                         <viewControllerLayoutGuide type="bottom" id="yju-9P-BzS"/>
@@ -334,13 +334,23 @@
                     <view key="view" contentMode="scaleToFill" id="hya-fT-HT2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T3u-U2-gNl">
+                                <rect key="frame" x="0.0" y="96" width="375" height="633"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Event History" image="book-simple-7" id="bhJ-uS-fQs"/>
+                    <navigationItem key="navigationItem" title="My Event History" id="e7l-hv-57b"/>
+                    <connections>
+                        <outlet property="eventsTableView" destination="T3u-U2-gNl" id="eDq-0h-HB3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kxl-Wi-dxR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1198" y="-791"/>
+            <point key="canvasLocation" x="1997.5999999999999" y="-791.37931034482767"/>
         </scene>
         <!--My Groups-->
         <scene sceneID="WbA-hv-IGM">
@@ -765,7 +775,7 @@
                         <segue destination="zmw-MZ-Mug" kind="relationship" relationship="viewControllers" id="rE9-k7-18u"/>
                         <segue destination="ldc-9S-JJF" kind="relationship" relationship="viewControllers" id="5HA-sH-iWX"/>
                         <segue destination="MRt-2J-hN5" kind="relationship" relationship="viewControllers" id="1yO-sx-Gww"/>
-                        <segue destination="Zsf-lt-MbP" kind="relationship" relationship="viewControllers" id="VXb-Ua-Ggh"/>
+                        <segue destination="Zlv-Ef-ibi" kind="relationship" relationship="viewControllers" id="VXb-Ua-Ggh"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aQv-Kb-SNC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -947,7 +957,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HlB-TN-sKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3455" y="-1292"/>
+            <point key="canvasLocation" x="3796" y="-1292.3645320197045"/>
         </scene>
         <!--New Group-->
         <scene sceneID="1Yp-K6-HHd">
@@ -1039,86 +1049,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="4238" y="-1292"/>
-        </scene>
-        <!--Set Location-->
-        <scene sceneID="SvH-wJ-1Dd">
-            <objects>
-                <viewController id="oa1-0S-VU0" customClass="ViewController" customModule="att2" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WqT-z2-JLa"/>
-                        <viewControllerLayoutGuide type="bottom" id="nc5-zP-9gv"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="V1h-Ue-xM3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aKM-gx-Lde">
-                                <rect key="frame" x="-20" y="-20" width="415" height="856"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Yy5-ug-Jia">
-                                        <rect key="frame" x="22" y="85" width="377" height="706"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    </mapView>
-                                    <button opaque="NO" alpha="0.75" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gPV-jJ-Rcs">
-                                        <rect key="frame" x="282" y="120" width="92" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.48334376820000002" green="0.54286873930000001" blue="0.54701667750000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="My Location">
-                                            <color key="titleColor" red="0.29352911549999999" green="1" blue="0.84671801560000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="myLoc:" destination="oa1-0S-VU0" eventType="touchUpInside" id="Dw9-dV-jKj"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lDb-BY-8GN">
-                                        <rect key="frame" x="128" y="624" width="164" height="41"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.0" green="0.98106676339999999" blue="0.57369142770000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <state key="normal" title="Set Location">
-                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
-                    </view>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Set Location" id="IhC-DI-GjB">
-                        <barButtonItem key="rightBarButtonItem" image="locationimage" id="yQR-UX-I81">
-                            <connections>
-                                <action selector="searchButton:" destination="oa1-0S-VU0" id="jpo-4y-C4y"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <connections>
-                        <outlet property="map" destination="Yy5-ug-Jia" id="qYJ-fl-atg"/>
-                        <outlet property="searchDisplayController" destination="lr3-TE-hKr" id="ork-iz-4vE"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oVB-1N-3vd" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="ynj-eG-7dw">
-                    <connections>
-                        <outlet property="delegate" destination="oa1-0S-VU0" id="T1z-9Q-Sn6"/>
-                        <outlet property="searchContentsController" destination="oa1-0S-VU0" id="u9y-n6-cag"/>
-                        <outlet property="searchResultsDataSource" destination="oa1-0S-VU0" id="JE2-4p-30I"/>
-                        <outlet property="searchResultsDelegate" destination="oa1-0S-VU0" id="iA7-qZ-6wV"/>
-                    </connections>
-                </searchDisplayController>
-                <searchDisplayController id="jDO-Cv-gKg">
-                    <connections>
-                        <outlet property="delegate" destination="oa1-0S-VU0" id="vDm-Sx-f9E"/>
-                        <outlet property="searchContentsController" destination="oa1-0S-VU0" id="6uX-dx-TvV"/>
-                        <outlet property="searchResultsDataSource" destination="oa1-0S-VU0" id="tJh-NX-NwD"/>
-                        <outlet property="searchResultsDelegate" destination="oa1-0S-VU0" id="Msb-ch-U3t"/>
-                    </connections>
-                </searchDisplayController>
-            </objects>
-            <point key="canvasLocation" x="5919" y="641"/>
+            <point key="canvasLocation" x="4580" y="-1292.3645320197045"/>
         </scene>
         <!--Current Event-->
         <scene sceneID="ccB-gK-Qbw">
@@ -1138,6 +1069,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E6K-fT-rXF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1027.2" y="-1981.0344827586207"/>
+        </scene>
+        <!--Event History-->
+        <scene sceneID="9xp-eM-ZYN">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Zlv-Ef-ibi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Event History" image="book-simple-7" id="bhJ-uS-fQs"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8xk-CJ-2EY">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Zsf-lt-MbP" kind="relationship" relationship="rootViewController" id="FBe-wQ-6F1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nuR-Rr-hTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1196.8" y="-791.37931034482767"/>
         </scene>
     </scenes>
     <resources>
