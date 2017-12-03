@@ -48,8 +48,22 @@ class LoginViewController: UIViewController {
                     self.errorText!.text = "Invalid Username"
                 }else{
                     // SET THE GLOBAL USER
-                    CURRENT_USER_ID = users[username]!;
-                    self.performSegue(withIdentifier: "login", sender: self)
+                    CURRENT_USER.Id = users[username]!;
+                    ref.child("users").child(users[username]!).observe(.value, with: {(snap) -> Void in
+                        if let user = snap.value as? Dictionary<String, Any> {
+                            let name = user["name"] as! String;
+                            CURRENT_USER = User(
+                                name: name,
+                                Id: users[username]!,
+                                username: username
+                            )
+                            self.performSegue(withIdentifier: "login", sender: self)
+                        }else{
+                            print("This really shouldnt happen")
+                        }
+                        
+                    })
+                    
                 }
              })
             

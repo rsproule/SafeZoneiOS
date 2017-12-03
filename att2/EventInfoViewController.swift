@@ -58,9 +58,18 @@ class EventInfoViewController: UIViewController {
         for user in self.group.members{
             members[user.Id] = [
                 "name" : user.name,
-                "username" : user.username
+                "username" : user.username,
+                "location" : "TBD"
             ]
         }
+        // current user is obv in the event
+        members[CURRENT_USER.Id] = [
+            "name" : CURRENT_USER.name,
+            "username" : CURRENT_USER.username,
+            "location" : location
+        ]
+        
+        
         //Sanity checking
         if(radius == nil){
             return
@@ -99,7 +108,7 @@ class EventInfoViewController: UIViewController {
         for m in self.group.members {
             ref?.child("users").child(m.Id).child("events").child((eventsRef?.key)!).setValue(true);
             
-            ref?.child("users").child(m.Id).child("activeEvent").setValue(event);
+            ref?.child("users").child(m.Id).child("activeEvent").setValue((eventsRef?.key)!);
 
         }
         

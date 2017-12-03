@@ -33,7 +33,7 @@ class GroupListViewController: UIViewController, UITableViewDelegate, UITableVie
         
         
         
-        getGroupsFromDatabase(userID: CURRENT_USER_ID)
+        getGroupsFromDatabase(userID: CURRENT_USER.Id)
         
         
 
