@@ -23,9 +23,11 @@ class CurrentInfoViewController: UIViewController, UITableViewDataSource, UITabl
 
     
     var group: Group = Group();
+    var groupLocation = CLLocation()
     
 
     var memberIds: [String] = []
+    var memberCoords: [String] = []
     
     
     override func viewDidLoad() {
@@ -36,6 +38,7 @@ class CurrentInfoViewController: UIViewController, UITableViewDataSource, UITabl
         memberTableView.dataSource = self;
         //memberTableView.register(UITableViewCell.self, forCellReuseIdentifier: "memberCell")
         getMemberIds(userID: CURRENT_USER.Id)
+        self.memberTableView.reloadData()
         //getMemberInfo(memberIds: self.memberIds)
     }
     
@@ -60,16 +63,40 @@ class CurrentInfoViewController: UIViewController, UITableViewDataSource, UITabl
             eventRef.observe(DataEventType.value, with: {(snap) -> Void in
                 if let event = snap.value as? Dictionary<String, Any> {
                     let mems = event["members"] as! Dictionary<String, Any>
+                    let loc = event["location"] as! Dictionary<String, Any>
+                    self.groupLocation = CLLocation(
+                        latitude: loc["latitude"] as! Double,
+                        longitude: loc["longitude"] as! Double
+                    )
                     
+                    var dist = 0.0
                     for (_, v) in mems {
                         let mem = v as! Dictionary<String, Any>
                         let fullname = mem["name"] as! String
                         let username = mem["username"] as! String
+                        if let loc = mem["location"] as? Dictionary<String, Any>{
+                            let coord = CLLocation(
+                                latitude: loc["latitude"] as! Double,
+                                longitude: loc["longitude"] as! Double
+                            )
+                            
+                            dist = coord.distance(from: self.groupLocation)
+                            dist = dist.rounded()
+                            
+                        }
+                        let u = User(name: fullname, Id: snap.key, username:username)
+                        if (self.group.members.contains(u)){
+                            self.memberCoords[self.group.members.count-1] = String(dist)
+                            self.memberTableView.reloadData()
+                        } else {
+                            self.group.members.append(u)
+                            self.memberTableView.insertRows(at: [IndexPath(row: self.group.members.count-1, section: 0)], with: UITableViewRowAnimation.automatic)
+                            self.memberTableView.cellForRow(at: IndexPath(row: self.group.members.count-1, section: 0))?.detailTextLabel?.text = "\(dist) m"
+                            self.memberCoords.append("\(dist) m")
+                        }
                         
-                        
-                        self.group.members.append(User(name: fullname, Id: snap.key, username:username))
-                        self.memberTableView.insertRows(at: [IndexPath(row: self.group.members.count-1, section: 0)], with: UITableViewRowAnimation.automatic)
                     }
+                    
                 }
                 
             })
@@ -133,7 +160,11 @@ class CurrentInfoViewController: UIViewController, UITableViewDataSource, UITabl
                 cell = UITableViewCell(style: .subtitle, reuseIdentifier: "memberCell")
             }
             cell?.textLabel?.text = group.members[indexPath.row].name
-            //cell?.detailTextLabel?.text = group.members[indexPath.row].Id
+            print(indexPath.row)
+            print(self.memberCoords.count)
+            if (self.memberCoords.count > indexPath.row) {
+                cell?.detailTextLabel?.text = self.memberCoords[indexPath.row]
+            }
             
         }
         
