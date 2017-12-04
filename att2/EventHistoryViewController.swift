@@ -55,7 +55,8 @@ class EventHistoryViewController: UIViewController, UITableViewDelegate, UITable
                     let startTime = event["start"] as! TimeInterval
                     let endTime = event["end"] as! TimeInterval
                     let groupID = event["group"] as! String;
-                    let theGroup  = self.getGroup(id: groupID)
+                    
+                    //let theGroup  = self.getGroup(id: groupID)
                     let evnt = Event(
                         location: CLLocation(
                             latitude: location["latitude"] as! CLLocationDegrees,
@@ -137,12 +138,16 @@ class EventHistoryViewController: UIViewController, UITableViewDelegate, UITable
         ref = Database.database().reference()
         
         var group:NSDictionary?
-        let search = "" + id
-        ref.child("groups").child(id as! String).observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child("groups").child(id).observeSingleEvent(of: .value, with: { (snapshot) in
             // Get user value
-            let value = snapshot.value as? NSDictionary
-            group = value!
-            print(group)
+            if let value = snapshot.value as? NSDictionary {
+                let members = value["members"] as! [User]
+                let name = value["name"] as! String
+//            let name = value?["name"] as! String
+                let events = value["events"] as! [Event]
+                let theGroup = Group(name: name, members: members, events: events, id: id)
+                print(group)
+            }
             // ...
         }) { (error) in
             print("error")
