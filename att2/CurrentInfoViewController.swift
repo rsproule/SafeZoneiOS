@@ -54,10 +54,13 @@ class CurrentInfoViewController: UIViewController, UITableViewDataSource, UITabl
             .child(currentUser)
             .child("activeEvent");
         
+        self.group.members = [];
         
         currEvRef.observe(.value, with: {(snapshot)-> Void in
-            let currEvent = snapshot.value
-            self.group.members = [];
+            if let currEvent = snapshot.value {
+            
+            
+            
             
             let eventRef = ref.child("events").child(currEvent as! String)
             
@@ -101,7 +104,7 @@ class CurrentInfoViewController: UIViewController, UITableViewDataSource, UITabl
                 }
                 
             })
-            
+            }
         })
         
     }
