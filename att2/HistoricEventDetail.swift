@@ -24,15 +24,19 @@ class HistoricEventDetail: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         groupName.text = event.eventName
-        date.text = event.date.description
-        var memberString = ""
-        for member in event.group.members {
-            memberString = memberString + "\(member.name) "
-        }
-        members.text = memberString
+        
+        let theDate : Date = event.date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM dd, yyyy hh:mm:ss"
+        let todaysDate = dateFormatter.string(from: theDate)
+        date.text = todaysDate
+        
         let theSpan = MKCoordinateSpan(latitudeDelta: 0.5, longitudeDelta: 0.5)
         let region = MKCoordinateRegion(center: event.location.coordinate, span: theSpan)
         map.setRegion(region, animated: true)
+        let annotation = MKPointAnnotation()
+        annotation.coordinate = event.location.coordinate
+        map.addAnnotation(annotation)
         // Do any additional setup after loading the view.
     }
     

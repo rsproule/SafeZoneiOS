@@ -28,8 +28,9 @@ class CurrentEventViewController: UIViewController, CLLocationManagerDelegate, M
         geoLocation.reverseGeocodeLocation(groupLocation, completionHandler: { (data, error) -> Void in
             self.map.centerCoordinate = self.groupLocation.coordinate
             
-            let reg = MKCoordinateRegionMakeWithDistance(self.groupLocation.coordinate, self.radius, self.radius)
+            let reg = MKCoordinateRegionMakeWithDistance(self.groupLocation.coordinate, self.radius*2, self.radius*2)
             self.map.setRegion(reg, animated: true)
+            self.updateLocationView(newLocation: self.groupLocation, radius: self.radius)
             
         })
         
@@ -107,7 +108,7 @@ class CurrentEventViewController: UIViewController, CLLocationManagerDelegate, M
                     longitude: loc["longitude"] as! Double
                 )
                 
-                self.radius = (event["radius"] as! Double) * 100.0; // should find actual conversion to miles
+                self.radius = (event["radius"] as! Double); // should find actual conversion to miles
                 
                 self.updateLocationView(newLocation: self.groupLocation, radius: self.radius);
                 
@@ -130,7 +131,21 @@ class CurrentEventViewController: UIViewController, CLLocationManagerDelegate, M
                             locationName: usrnm,
                             coordinate: memberCoord
                         )
+                        
                         self.memberAnnotations.append(destLocation);
+                        let currCoord = CLLocation(
+                            latitude: memloc["latitude"] as! Double,
+                            longitude: memloc["longitude"] as! Double
+                        )
+                        let dist = currCoord.distance(from: self.groupLocation)
+                        if (dist>self.radius){
+                            let alertController = UIAlertController(title: "Member out of range", message:
+                                "\(nm) out of range. Send help.", preferredStyle: UIAlertControllerStyle.alert)
+                            alertController.addAction(UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.default,handler: nil))
+                            
+                            self.present(alertController, animated: true, completion: nil)
+                        }
+                        
                     }else{
                         //User has not provided a location yet
                         print("User has not given a location")

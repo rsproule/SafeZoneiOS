@@ -134,7 +134,7 @@ class EventInfoViewController: UIViewController {
         }
         
         //should switch us to the current event tab
-        tabBarController?.selectedIndex = 0
+        self.tabBarController?.selectedIndex = 0
 
         
         
